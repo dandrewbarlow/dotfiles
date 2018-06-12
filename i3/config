@@ -176,7 +176,7 @@ gaps outer 25
 
 
 #Wallpaper
-exec_always feh --bg-fill ~/Photos/background.jpg
+exec_always feh --bg-fill ~/Photos/wallpaper.jpg
 for_window [class="^.*"] border pixel 0
 
 
