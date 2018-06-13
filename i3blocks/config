@@ -90,10 +90,10 @@ markup=none
 
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
-#[cpu_usage]
-#label=CPU
-#interval=10
-#min_width=CPU: 100.00%
+[cpu_usage]
+label=CPU
+interval=5
+min_width=CPU: 100.00%
 #separator=false
 
 #[load_average]
@@ -105,20 +105,18 @@ markup=none
 [battery]
 label=BAT
 label=⚡
-instance=1
+#instance=1
 interval=30
-
 
 #audio
 [audio]
 label=
 interval=1
 
-
 # Date Time
 #
 [time]
 label= 
 color=#FFFFFF
-command=date '+%m/%d/%Y  %H:%M:%S'
+command=date '+%m/%d/%Y |  %H:%M:%S'
 interval=1
