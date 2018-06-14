@@ -30,18 +30,16 @@ command=$HOME/.config/i3blocks/scripts/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
-# Volume indicator
+#MUSIC now playing
 #
-# The first parameter sets the step (and units to display)
-# The second parameter overrides the mixer selection
-# See the script for details.
-#[volume]
-#label=VOL
-#label=♪
-#instance=Master
-#instance=PCM
-#interval=once
-#signal=10
+[playerctl2]
+label=
+interval=1
+markup=pango
+
+
+
+
 
 # Memory usage
 #
@@ -93,23 +91,27 @@ markup=none
 [cpu_usage]
 label=CPU
 interval=5
-min_width=CPU: 100.00%
-#separator=false
+#min_width=CPU: 100.00%
+separator=true
 
 #[load_average]
 #interval=10
 
-# Battery indicator
+# BATTERIES ARE A BITCH
 #
-# The battery instance defaults to 0.
-[battery]
-label=BAT
-label=⚡
-#instance=1
+
+#BAT2
+[battery4]
+#command=$SCRIPT_DIR/battery2
+markup=pango
 interval=30
 
+
+
+
+
 #audio
-[audio]
+[volume]
 label=
 interval=1
 
