@@ -2,6 +2,11 @@
 
 This is a collection of my configuration files for things like the terminal, my i3 windows manager, pacman package manager, etc.
 
-I tried to make it easier on myself by making a script to hopefully copy things to where they are supposed to be. This is the one called copyFiles.sh
+#i3
+the i3 folder goes in ~/.config/i3
 
+#i3blocks
+this one goes in ~/.config/i3blocks
 
+#pacman
+pacman.conf belongs in /etc/pacman.conf   NOTE: requires root access
