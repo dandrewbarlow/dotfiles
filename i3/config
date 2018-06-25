@@ -151,7 +151,9 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
+
+
+# resize window mode (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -176,6 +178,12 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
+#resize on the fly
+
+bindsym $mod+comma resize shrink width 10 px or 10 ppt
+bindsym $mod+period resize grow width 10 px or 10 ppt
+
+
 bindsym $mod+r mode "resize"
 
 new_window 1pixel
@@ -186,7 +194,9 @@ gaps outer 10
 for_window [class="Firefox"] smart_gaps on
 
 #Wallpaper
-exec_always wal -i ~/Photos/wallpapers/
+#exec_always wal -i ~/Photos/wallpapers/
+exec_always /home/andrew/Coding/genColorScheme.py
+
 
 #Define Colors
 set_from_resource $bg-color		i3mw.color0     #38B6FF
@@ -229,4 +239,5 @@ bar {
 
 #mod + d = menu config
 exec_always compton
-bindsym $mod+d exec ~/.config/i3/rofi_shell.sh $bg-color $text-color $inactive-bg-color
+bindsym $mod+d exec $HOME/.config/i3/rofi_shell.sh
+ 
