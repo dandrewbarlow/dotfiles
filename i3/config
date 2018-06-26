@@ -194,9 +194,11 @@ gaps outer 10
 for_window [class="Firefox"] smart_gaps on
 
 #Wallpaper
-#exec_always wal -i ~/Photos/wallpapers/
-exec_always /home/andrew/Coding/genColorScheme.py
+exec_always /home/andrew/.config/i3/scripts/genColorScheme.py
 
+
+#Reset Wallpaper
+bindsym $mod+g exec /home/andrew/.config/i3/scripts/genColorScheme.py
 
 #Define Colors
 set_from_resource $bg-color		i3mw.color0     #38B6FF
@@ -239,5 +241,5 @@ bar {
 
 #mod + d = menu config
 exec_always compton
-bindsym $mod+d exec $HOME/.config/i3/rofi_shell.sh
+bindsym $mod+d exec $HOME/.config/i3/scripts/rofi_shell.sh
  
