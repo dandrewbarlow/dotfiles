@@ -192,11 +192,14 @@ new_window 1pixel
 gaps inner 20
 gaps outer 10
 for_window [class="Firefox"] smart_gaps on
+<<<<<<< HEAD
 
 
 #DROPBOX on startup
 exec /bin/dropbox
 
+=======
+>>>>>>> 39aeaae1e215b13b32ebb42154374c87e8094e5b
 
 #Wallpaper
 exec_always /home/andrew/.config/i3/scripts/genColorScheme.py
