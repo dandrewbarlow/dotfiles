@@ -75,10 +75,19 @@ markup=pango
 #interval=10
 #separator=false
 
-#[wifi]
-#instance=wlp3s0
-#interval=10
+[vpn]
+label=
+interval=2
+
+[wifi]
+label=
+instance=wlp3s0
+interval=3
 #separator=false
+
+#[wifi_alt]
+#interval=10
+
 
 #[bandwidth]
 #instance=eth0
@@ -90,7 +99,7 @@ markup=pango
 # see the script for details.
 [cpu_usage]
 label=CPU
-interval=5
+interval=1
 #min_width=CPU: 100.00%
 separator=true
 
@@ -120,5 +129,5 @@ interval=1
 [time]
 label= 
 color=#FFFFFF
-command=date '+%m/%d/%Y |  %H:%M:%S'
+command=date '+%m/%d/%Y |  %l:%M:%S'
 interval=1

@@ -106,13 +106,13 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: "
 set $ws2 "2: "
-set $ws3 "3"
+set $ws3 "3: "
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9"
+set $ws9 "9: "
 set $ws10 "10: "
 
 # switch to workspace
@@ -192,21 +192,23 @@ new_window 1pixel
 gaps inner 20
 gaps outer 10
 for_window [class="Firefox"] smart_gaps on
-<<<<<<< HEAD
 
 
 #DROPBOX on startup
 exec /bin/dropbox
 
-=======
->>>>>>> 39aeaae1e215b13b32ebb42154374c87e8094e5b
+#DUNST notification program on startup
+exec /bin/dunst
+
+#Network Manager on startup
+exech /bin/nm-applet
 
 #Wallpaper
 exec_always /home/andrew/.config/i3/scripts/genColorScheme.py
 
 
 #Reset Wallpaper
-bindsym $mod+g exec /home/andrew/.config/i3/scripts/genColorScheme.py
+bindsym $mod+g exec /home/andrew/.config/i3/scripts/genColorScheme.py; exec /home/andrew/.config/i3/scripts/resetVis.sh
 
 #Define Colors
 set_from_resource $bg-color		i3mw.color0     #38B6FF

@@ -1,0 +1,10 @@
+#! /bin/bash
+
+echo "[1] copying i3 config files"
+cp -r ~/.config/i3/* ~/Dropbox/dotfiles/i3
+echo "[2] copying i3blocks config files"
+cp -r ~/.config/i3blocks/* ~/Dropbox/dotfiles/i3blocks
+echo "[3] copying .bashrc"
+cp  ~/.bashrc ~/Dropbox/dotfiles/
+echo "[4] copying pacman config files"
+cp /etc/pacman.conf ~/Dropbox/dotfiles/pacman/
