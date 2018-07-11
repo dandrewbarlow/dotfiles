@@ -75,10 +75,6 @@ def init():
 def main():
     vis_config = "/home/andrew/.config/vis/colors/pywal"
 
-    try:
-        os.remove(vis_config)
-    except OSError:
-        pass
 
     file_out = open(vis_config, 'w')
 
@@ -101,13 +97,13 @@ def main():
         #get a list of hex values seperate from the dict
         colors = colorScheme["colors"]
 
+    except:
 
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         print("Error fetching current color scheme")
-        if (colorCount == 2):
-            print("Could not generate background with:")
         print(background)
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
         return 1
 
     colorList = []
