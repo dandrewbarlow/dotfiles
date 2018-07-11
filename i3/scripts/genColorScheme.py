@@ -2,14 +2,10 @@
 
 '''
 Andrew Barlow
-
 Generate a color palette based on the current background set by pywal
-
 Using documentation from:
 https://github.com/dylanaraps/pywal/wiki/Using-%60pywal%60-as-a-module#examples
-
 06/24/18
-
 '''
 
 #import wal api
@@ -22,7 +18,7 @@ import os
 import subprocess
 
 
-#turn hex val into hsv 
+#turn hex val into hsv
 def get_hsv(hexrgb):
     hexrgb = hexrgb.lstrip("#")   # in case you have Web color specs
     r, g, b = (int(hexrgb[i:i+2], 16) / 255.0 for i in range(0,5,2))
@@ -35,7 +31,7 @@ def get_hsv(hexrgb):
 #sort list of hsv colors
 def sort_hsv(colorList):
     #bubble sort the colors
-    sorted = False 
+    sorted = False
     while (sorted == False):
         sorted = True
         for i in colorList:
@@ -47,29 +43,33 @@ def sort_hsv(colorList):
 
 
 def test_sorting(colorList_og, colorList_new):
-    print("--------------------------------------------") 
+    print("--------------------------------------------")
     print("Original Color List:")
-    print("--------------------------------------------") 
+    print("--------------------------------------------")
 
-    for i in colorList_og: 
+    for i in colorList_og:
         print(i)
-    
+
     print("--------------------------------------------")
 
 
 
     print("Sorted Color List:")
-    print("--------------------------------------------") 
+    print("--------------------------------------------")
 
     for i in colorList_new:
         print(i)
-    
-    print("--------------------------------------------") 
+
+    print("--------------------------------------------")
 
 
-
-
-
+def init():
+    try:
+        os.remove("/home/andrew/.cache/wal/sequences")
+    except FileNotFoundError:
+        print("file nonexistant")
+    #reset vis
+    reset_vis()
 
 #Main Function
 def main():
@@ -78,43 +78,29 @@ def main():
     try:
         os.remove(vis_config)
     except OSError:
-        pass 
+        pass
 
     file_out = open(vis_config, 'w')
-    
-    known_bad_walls=[]
+
 
     try:
 
         #find path for current background image
         background = pywal.image.get("/home/andrew/Photos/wallpapers/")
-    
+
 
     except:
-    
+        #error message
         print("Error fetching current background")
 
     try:
-    
-        #get color scheme of current background in dict format
 
+        #get a color scheme for current background in dict format
         colorScheme = pywal.colors.get(background)
-        
+
+        #get a list of hex values seperate from the dict
         colors = colorScheme["colors"]
 
-    except:
-        failed=True
-        colorCount = 15
-        while (failed):
-            try:
-                colorScheme = pywal.colors.get(background, "",colorCount, )
-                failed = False
-            except:
-                if (colorCount > 1):
-                    colorCount -= 1
-                    print("Trying again with ", colorCount, " colors")
-                else:
-                    failed = False
 
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         print("Error fetching current color scheme")
@@ -126,9 +112,9 @@ def main():
 
     colorList = []
 
-    for key in colors: 
-        colorList.append(colors[key]) 
-    
+    for key in colors:
+        colorList.append(colors[key])
+
 
     testSort = colorList
 
@@ -136,7 +122,7 @@ def main():
 
     #test_sorting(colorList, testSort)
 
-    
+
 
     #write all of the colors in color scheme to vis config file
     for i in range(0, len(colorList)):
@@ -150,13 +136,13 @@ def main():
 
 
     #Taken from github page, basically sets the background & themes
-   
+
 
     # Apply the palette to all open terminals.
     # Second argument is a boolean for VTE terminals.
     # Set it to true if the terminal you're using is
     # VTE based. (xfce4-terminal, termite, gnome-terminal.)
-    pywal.sequences.send(colorScheme, "True")
+    pywal.sequences.send(colorScheme, "/home/andrew/.cache/wal", True)
 
     # Export all template files.
     pywal.export.every(colorScheme)
@@ -172,7 +158,7 @@ def main():
     pywal.reload.i3()
     pywal.reload.polybar()
     pywal.reload.xrdb()
-    
+
     # Set the wallpaper.
     pywal.wallpaper.change(background)
 
@@ -183,3 +169,4 @@ def main():
 
 #call main
 main()
+subprocess.call(['./resetVis.sh'])
