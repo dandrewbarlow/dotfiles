@@ -21,6 +21,8 @@ then
   sudo pacman -S $(cat ./my_requirements.txt)
 fi
 
+# setup git globally 
+./git-config.sh
 
 # install atom
 # https://flight-manual.atom.io/getting-started/sections/installing-atom/
