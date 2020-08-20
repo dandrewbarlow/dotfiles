@@ -2,8 +2,12 @@
 ### Andrew Barlow
 A repo to help quickly setup a customized dev environment
 
+**DON'T RUN ANYTHING YOU DON'T UNDERSTAND**
+
+This was made for myself, and I have no problem with anyone else using or modifying these scripts, but please be smart and don't run any scripts that you don't understand. These scripts are fairly simple, but also require superuser privileges and are in a relatively untested state. Don't mess with your system if you don't know what you're doing. Period.
+
 ## Guide
-These scripts are for setting up a linux environment quickly. I have not had the chance to test them out yet, so take them with a grain of salt. That said I tried to make them usable for fedora, ubuntu, and arch. `install-script.sh` was designed to be the script to rule them all, calling other scripts for some possible modularity. That said they can also be called individually. This changes the shell to zsh and uses oh-my-zsh so you will have to log out and back in after finishing, but I would advise a full reboot in case there are kernel updates or anything weird.
+These scripts are for setting up a linux environment quickly. I have not had the chance to test them out yet, so take them with a grain of salt. That said I tried to make them usable for fedora, ubuntu, and arch. `install-script.sh` was designed to be the script to rule them all, calling other scripts for some possible modularity. They can also be called individually if you want. This changes the shell to zsh and uses oh-my-zsh so you will have to log out and back in after finishing, but I would advise a full reboot in case there are kernel updates or anything weird.
 
 ## Files
 * `install-script.sh`- Calls all the scripts, downloads packages based on distro, contains [oh-my-zsh's one liner](https://github.com/ohmyzsh/ohmyzsh) to install. oh-my-zsh will take over the shell and has to be exited to finish the script. On top of that changing the shell requires a log out and back in after running.
