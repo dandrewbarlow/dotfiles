@@ -2,7 +2,7 @@
 ### Andrew Barlow
 A repo to help quickly setup a customized dev environment
 
-###**DON'T RUN ANYTHING YOU DON'T UNDERSTAND!!**
+### **DON'T RUN ANYTHING YOU DON'T UNDERSTAND!!**
 
 This was made for myself, and I have no problem with anyone else using or modifying these scripts, but please be smart and don't run any scripts that you don't understand. These scripts are fairly simple, but also require superuser privileges and are in a relatively untested state. Don't mess with your system if you don't know what you're doing. Period.
 
