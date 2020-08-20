@@ -1,0 +1,8 @@
+neovim
+neofetch
+gnome-tweaks
+arc-theme
+papirus-icon-theme
+gcc
+zsh
+tmux

@@ -1,0 +1,11 @@
+emmet
+atom-beautify
+linter
+linter-ui-default
+minimap
+minimap-linter
+color-picker
+bracket-colorizer
+dracula-syntax
+dracula-ui
+cyberpunk-neo-syntax
