@@ -4,10 +4,10 @@
 git clone https://github.com/blaisck/sfwin.git ~/Downloads/
 
 # if the fonts directory doesn't exist, make it
-mkdir -p ~/.fonts
+sudo mkdir -p /usr/share/fonts
 
 # copy the fonts to said directory
-cp -r ~/Downloads/sfwin/SF* ~/.fonts/
+sudo cp -r ~/Downloads/sfwin/SF* usr/share/fonts/
 
 # refresh font cache
 fc-cache -v
