@@ -5,23 +5,21 @@
 distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
 
 # update linux and install packages using native package manager
-if [ $distro='fedora' ]
+if [ $distro = 'fedora' ]
 then
   sudo dnf upgrade
-  sudo dnf install $(cat ./my_requirements.txt)
-fi
-elif [ $distro='ubuntu' ]
+  sudo dnf install "$(cat ./my_requirements.txt)"
+elif [ $distro = 'ubuntu' ]
 then
   sudo apt-get update && sudo apt-get upgrade
-  sudo apt-get install $(cat ./my_requirements.txt)
-fi
-elif [ $distro='arch' ] || [ distro='manjaro' ]
+  sudo apt-get install "$(cat ./my_requirements.txt)"
+elif [ $distro = 'arch' ] || [ $distro = 'manjaro' ]
 then
   sudo pacman -Syu
-  sudo pacman -S $(cat ./my_requirements.txt)
+  sudo pacman -S "$(cat ./my_requirements.txt)"
 fi
 
-# setup git globally 
+# setup git globally
 ./git-config.sh
 
 # install atom

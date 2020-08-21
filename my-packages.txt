@@ -6,3 +6,4 @@ papirus-icon-theme
 gcc
 zsh
 tmux
+shellcheck
