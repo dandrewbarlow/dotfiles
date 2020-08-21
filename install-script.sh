@@ -4,19 +4,19 @@
 # get distro
 distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
 
-# update linux and install packages using native package manager
+# update linux and install packages using native package manager, assume yes to eliminate user input
 if [ $distro = 'fedora' ]
 then
-  sudo dnf upgrade
-  sudo dnf install "$(cat ./my_requirements.txt)"
-elif [ $distro = 'ubuntu' ]
+  sudo dnf -y upgrade
+  sudo dnf -y install "$(cat ./my_requirements.txt)"
+elif [ $distro = 'ubuntu' ] || [ $distro = 'debian' ]
 then
-  sudo apt-get update && sudo apt-get upgrade
-  sudo apt-get install "$(cat ./my_requirements.txt)"
+  sudo apt-get -y update && sudo apt-get -y upgrade
+  sudo apt-get -y install "$(cat ./my_requirements.txt)"
 elif [ $distro = 'arch' ] || [ $distro = 'manjaro' ]
 then
-  sudo pacman -Syu
-  sudo pacman -S "$(cat ./my_requirements.txt)"
+  sudo pacman --noconfirm -Syu
+  sudo pacman --noconfirm -S "$(cat ./my_requirements.txt)"
 fi
 
 # setup git globally
@@ -38,3 +38,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # download & install the spaceship theme
 # https://github.com/denysdovhan/spaceship-prompt
 ./spaceship-theme.sh
+
+# froggie
+wget https://i.imgur.com/voY8SXt.jpg -O ~/Pictures/froggie.jpg

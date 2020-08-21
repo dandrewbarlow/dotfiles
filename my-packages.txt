@@ -7,3 +7,5 @@ gcc
 zsh
 tmux
 shellcheck
+htop
+gdb

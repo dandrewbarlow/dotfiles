@@ -12,19 +12,19 @@ then
 
   sudo sh -c 'echo -e "[Atom]\nname=Atom Editor\nbaseurl=https://packagecloud.io/AtomEditor/atom/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/AtomEditor/atom/gpgkey" > /etc/yum.repos.d/atom.repo'
 
-  sudo dnf install atom
-elif [ $distro = 'ubuntu' ]
+  sudo dnf -y install atom
+elif [ $distro = 'ubuntu' ] || [ $distro = 'debian' ]
 then
-  wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add
+  wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key -y add
 
   sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
 
-  sudo apt-get update
+  sudo apt-get -y update
 
-  sudo apt-get install atom
+  sudo apt-get -y install atom
 elif [ $distro = 'arch' ] || [ $distro = 'manjaro' ]
 then
-  pacman -S atom
+  sudo pacman --noconfirm -S atom
 fi
 
 # atom package manager can take it from here
