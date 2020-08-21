@@ -28,7 +28,6 @@ fi
 
 # install OSX fonts bc they're pretty
 # https://github.com/blaisck/sfwin
-
 ./mac-fonts.sh
 
 # install oh-my-zsh

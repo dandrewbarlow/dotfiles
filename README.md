@@ -1,5 +1,5 @@
 # Linux-Essentials
-### Andrew Barlow
+### [Andrew Barlow](https://github.com/dandrewbarlow)
 A repo to help quickly setup a customized dev environment
 
 ### **DON'T RUN ANYTHING YOU DON'T UNDERSTAND!!**
