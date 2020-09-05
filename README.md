@@ -24,6 +24,10 @@ These scripts are for setting up a linux environment quickly. I have not had the
 
 * `atom-packages.txt`- contains a list of my atom packages to install
 
-* `mac-fonts.sh`- instructions to download OSX fonts from the [SFWIN Repository](https://github.com/blaisck/sfwin), move them to the fonts directory, and refresh the font cache. Using them still requires them to be manually set, but this at least removes the grunt work of downloading
+* `fonts.sh`- extract an included 7z file and copy the nerd-fonts within to the ~/.fonts directory, then refresh the font cache
+
+* `vim.sh` - script to install vim-plug, install pynvim (dependency of deoplete), copy the `init.vim` file to the correct directory, run an nvim PlugInstall command, and alias vim and vi to nvim
+
+* `init.vim` - my nvim configuration file, includes packages, settings, shortcuts
 
 * `spaceship-theme.sh`- install [spaceship prompt](https://github.com/denysdovhan/spaceship-prompt) (my preferred terminal theme)
