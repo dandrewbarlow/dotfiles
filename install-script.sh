@@ -38,5 +38,19 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # https://github.com/denysdovhan/spaceship-prompt
 ./spaceship-theme.sh
 
+# Install Vim-Plug Plugin Manager
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+
+# Install NeoVim Plugins
+mkdir -p ~/.config/nvim
+cp init.vim ~/.config/nvim/
+nvim -c ':PlugInstall'
+
+# Create vim/vi -> nvim alias
+echo "alias vim='nvim'" >> ~/.zshrc
+echo "alias vi='nvim'" >> ~/.zshrc
+
 # froggie
 wget https://i.imgur.com/voY8SXt.jpg -O ~/Pictures/froggie.jpg
