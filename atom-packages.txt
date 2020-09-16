@@ -9,3 +9,5 @@ bracket-colorizer
 dracula-syntax
 dracula-ui
 cyberpunk-neo-syntax
+latex
+language-latex

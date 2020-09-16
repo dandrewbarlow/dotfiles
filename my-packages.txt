@@ -1,6 +1,7 @@
 neovim
 p7zip
 python3
+anaconda
 neofetch
 gnome-tweaks
 arc-theme
