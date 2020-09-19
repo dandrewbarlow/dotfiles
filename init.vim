@@ -48,5 +48,8 @@ nmap <C-n> :NERDTreeToggle<CR>
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 
+" set ctrl-h and ctrl-l to switch tabs
+map <C-h> <C-w>h
+map <C-l> <C-w>l
 
 
