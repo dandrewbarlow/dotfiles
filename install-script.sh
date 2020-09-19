@@ -41,5 +41,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # NeoVim setup script
 ./vim.sh
 
+# Haskell setup script
+./haskell.sh
+
 # froggie
 wget https://i.imgur.com/voY8SXt.jpg -O ~/Pictures/froggie.jpg
