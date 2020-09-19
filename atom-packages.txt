@@ -11,3 +11,4 @@ dracula-ui
 cyberpunk-neo-syntax
 latex
 language-latex
+atom-haskell
