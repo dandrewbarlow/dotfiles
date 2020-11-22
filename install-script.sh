@@ -44,5 +44,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # Haskell setup script
 ./haskell.sh
 
+# install kite
+./kite-install.sh
 # froggie
 wget https://i.imgur.com/voY8SXt.jpg -O ~/Pictures/froggie.jpg
