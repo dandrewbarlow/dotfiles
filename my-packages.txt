@@ -13,3 +13,11 @@ shellcheck
 htop
 gdb
 qbittorrent
+dmenu
+sxiv
+ffmpeg
+pandoc
+go
+cmus
+zathura
+youtube-dl

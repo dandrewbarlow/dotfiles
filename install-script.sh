@@ -24,7 +24,20 @@ fi
 
 # install atom
 # https://flight-manual.atom.io/getting-started/sections/installing-atom/
-./atom-install.sh
+# added propt bc vscode is starting to replace it for me
+echo "Install Atom?"
+select atom in 'y' 'n'; do
+	case "$atom" in
+		y)
+			./atom-install.sh
+			break
+			;;
+		n)
+			break
+			;;
+	esac
+done
+
 
 # install OSX fonts bc they're pretty
 # https://github.com/blaisck/sfwin
@@ -46,5 +59,23 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # install kite
 ./kite-install.sh
+
 # froggie
 wget https://i.imgur.com/voY8SXt.jpg -O ~/Pictures/froggie.jpg
+
+# get some music from the web if a want it
+echo "Download some music from the web? (its death grips)"
+select music in 'y' 'n'; do
+	case "$music" in
+		y)
+			./music.sh
+			break
+			;;
+		n)
+			break
+			;;
+	esac
+done
+
+
+
