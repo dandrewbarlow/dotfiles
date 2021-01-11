@@ -135,7 +135,7 @@ alias z='zathura'
 # Guess I'm a nerd now
 alias init='~/.scripts/init.sh'
 alias pman='~/.scripts/pman.sh'
-
+alias readpdf='~/.scripts/readpdf.sh'
 
 # -----------------------------------------------
 

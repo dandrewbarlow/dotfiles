@@ -19,9 +19,7 @@ then
 
   sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
 
-  sudo apt-get -y update
-
-  sudo apt-get -y install atom
+  sudo apt-get -y update && sudo apt-get -y install atom
 elif [ $distro = 'arch' ] || [ $distro = 'manjaro' ]
 then
   sudo pacman --noconfirm -S atom

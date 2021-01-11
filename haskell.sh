@@ -15,4 +15,4 @@ then
 fi
 
 # Set ghci prompt to a pretty lambda
-echo ":set prompt \"λ: \"" > ~/.ghc/ghci.conf
+echo ":set prompt \"λ: \"" >> "$HOME/.ghc/ghci.conf"
