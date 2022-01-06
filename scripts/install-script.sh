@@ -1,5 +1,7 @@
 #! /bin/bash
 
+# package list
+package_list="../package-lists/essential-packages.txt"
 
 # get distro
 distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
@@ -8,15 +10,18 @@ distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
 if [ $distro = 'fedora' ]
 then
   sudo dnf -y upgrade
-  sudo dnf -y install "$(cat ./my_requirements.txt)"
+  sudo dnf -y install "$(cat $package_list.txt)"
 elif [ $distro = 'ubuntu' ] || [ $distro = 'debian' ]
 then
   sudo apt-get -y update && sudo apt-get -y upgrade
-  sudo apt-get -y install "$(cat ./my_requirements.txt)"
+  sudo apt-get -y install "$(cat $package_list.txt)"
 elif [ $distro = 'arch' ] || [ $distro = 'manjaro' ]
 then
   sudo pacman --noconfirm -Syu
-  sudo pacman --noconfirm -S "$(cat ./my_requirements.txt)"
+  sudo pacman --noconfirm -S "$(cat $package_list.txt)"
+else
+	echo "Error: unsupported distro"
+	return 1
 fi
 
 # setup git globally
@@ -39,13 +44,9 @@ select atom in 'y' 'n'; do
 done
 
 
-# install OSX fonts bc they're pretty
-# https://github.com/blaisck/sfwin
-./fonts.sh
-
-# install oh-my-zsh
+# install oh-my-zsh if it isn't already
 # https://github.com/ohmyzsh/ohmyzsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+[ ! -d "$HOME/.oh-my-zsh" ] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # download & install the spaceship theme
 # https://github.com/denysdovhan/spaceship-prompt
@@ -62,20 +63,3 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # froggie
 wget https://i.imgur.com/voY8SXt.jpg -O ~/Pictures/froggie.jpg
-
-# get some music from the web if a want it
-echo "Download some music from the web? (its death grips)"
-select music in 'y' 'n'; do
-	case "$music" in
-		y)
-			./music.sh
-			break
-			;;
-		n)
-			break
-			;;
-	esac
-done
-
-
-

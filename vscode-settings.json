@@ -1,0 +1,64 @@
+{
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Dracula",
+    "python.languageServer": "Pylance",
+    "terminal.integrated.fontFamily": "'Jetbrains Mono'",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "editor.wordWrap": "on",
+    "git.autofetch": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "cSpell.userWords": [
+        "Hermansader",
+        "Neurogenesis",
+        "Thelonious",
+        "neuroplasticity"
+    ],
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "python.showStartPage": false,
+    "beautify.config": {
+        // ??? idk there's almost no helpful documentation for this
+        "html.format.indentInnerHtml": 0,
+        // "html.format.wrapLineLength": 0
+    },
+    "editor.fontFamily": "'JetBrains Mono', 'SF Mono', monospace",
+    "editor.fontLigatures": true,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "emmet.excludeLanguages": [
+        "markdown"
+    ],
+    "explorer.confirmDelete": false,
+    "browser-preview.chromeExecutable": "/bin/chromium-freeworld",
+    "jupyter.alwaysTrustNotebooks": true,
+    "jupyter.askForKernelRestart": false,
+    "files.associations": {
+        "*.rmd": "markdown"
+    },
+    "r.interpreterPath": "/usr/bin/R",
+    "r.dependencyChecks": true,
+    "processing.path": "/opt/processing/processing-java",
+    "omnisharp.useGlobalMono": "always",
+    "gulp.autoDetect": "on",
+    "redhat.telemetry.enabled": false,
+    "julia.symbolCacheDownload": true,
+    "julia.executablePath": "/usr/bin/julia",
+    "julia.enableTelemetry": false,
+    "vim.vimrc.enable": true,
+    "prettier.configPath": "~/.config/prettier/prettier.rc",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.zoomLevel": 2,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": true
+}

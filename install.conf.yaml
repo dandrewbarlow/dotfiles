@@ -1,0 +1,31 @@
+# Andrew Barlow
+# dotbot settings
+
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    # oh-my-zsh submodule
+    ~/.tmux.conf: .tmux/.tmux.conf
+    # my personal init.vim file
+    ~/.config/nvim/init.vim: init.vim
+    # Rofi settings / themes
+    ~/.config/rofi: rofi
+    # Z shell config
+    ~/.zshrc: .zshrc
+
+- shell:
+  - [scripts/git-config.sh, Configure a gitconfig file if none exists]
+  - [git submodule update --init --recursive, Installing submodules]
+  - [nvim -c ':PlugInstall', Installing/Updating vim plugins]
+
+  # more complicated installations
+  - 
+    - command: if [ ! -z "$(which code)" ]; then code --install-extension "$(cat package-lists/vscode-extensions.txt)"; fi
+    - description: Installing VSCode Plugins
+  -
+    - command: if [ ! -d "$HOME/.oh-my-zsh" ]; then sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"; fi
+    - description: Installing oh-my-zsh

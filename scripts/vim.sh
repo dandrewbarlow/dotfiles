@@ -7,12 +7,4 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 pip3 install --user pynvim
 
-configDir="$HOME/.config/nvim"
-# Install NeoVim Plugins
-mkdir -p "$configDir"
-cp init.vim "configDir/"
 nvim -c ':PlugInstall'
-
-# Create vim/vi -> nvim alias
-echo "alias vim='nvim'" >> "$HOME/.zshrc" || echo "Error aliasing"
-echo "alias vi='nvim'" >> "$HOME/.zshrc" || echo "Error aliasing"
