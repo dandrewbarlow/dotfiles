@@ -16,6 +16,8 @@
     ~/.config/rofi: rofi
     # Z shell config
     ~/.zshrc: .zshrc
+    ~/.config/kitty/dracula.conf: kitty/dracula.conf
+    ~/.config/kitty/kitty.conf: kitty.conf
 
 - shell:
   - [scripts/git-config.sh, Configure a gitconfig file if none exists]
