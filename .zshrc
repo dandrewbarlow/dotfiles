@@ -162,9 +162,6 @@ unset __conda_setup
 # This apparently allows the shell to check the next word
 alias sudo='sudo '
 
-alias install='sudo dnf install'
-alias update='sudo dnf update && flatpak update'
-
 # gotta have my neovim
 alias vim='nvim'
 alias vi='nvim'
@@ -175,7 +172,7 @@ alias ghc='stack ghc'
 
 alias popular="history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10"
 
-alias coding='cd ~/Dropbox/coding/'
+alias coding="cd $HOME/Dropbox/coding/"
 
 alias c='code'
 
@@ -197,13 +194,27 @@ alias pd='/usr/local/lib/pd-0.51-3/bin/pd-gui'
 # common command in AI art scripts
 alias pygen='python3 generate.py'
 
+# OS SPECIFIC
+if [["$OSTYPE" == "linux-gnu"* ]]; then
+	# package manager
+	# ? note: fedora specific, because that's my distro and I'm lazy
+	alias install='sudo dnf install'
+	alias update='sudo dnf update && flatpak update'
+
+	# open files from command line
+	alias open='xdg-open'
+elif [["$OSTYPE" == "darwin"* ]]; then
+	alias install='brew install'
+	alias update='brew update && brew upgrade'
+fi
+
 # Scripts ===================================================
 # Guess I'm a nerd now
-alias init='~/.scripts/init.sh'
-alias pman='~/.scripts/pman.sh'
+alias init="$HOME/.scripts/init.sh"
+alias pman="$HOME/.scripts/pman.sh"
 
-alias blender="~/.scripts/start_blender_with_cuda.sh"
-alias readpdf=~/.scripts/readpdf.sh
+alias blender="$HOME/.scripts/start_blender_with_cuda.sh"
+alias readpdf="$HOME/.scripts/readpdf.sh"
 # ==================================================
 
 # perl stuff? I only vaguely remember what this was for
@@ -217,4 +228,5 @@ PERL_MM_OPT="INSTALL_BASE=/Users/Andrew/perl5"; export PERL_MM_OPT;
 [ -f "/Users/Andrew/.ghcup/env" ] && source "/Users/Andrew/.ghcup/env" # ghcup-env
 
 # Shell Startup Script ==================================================
+# just gives a lil bit of life to the terminal
 [ -f "$HOME/.scripts/terminal_startup.sh" ] && "$HOME/.scripts/terminal_startup.sh"
