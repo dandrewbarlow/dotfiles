@@ -8,3 +8,6 @@
 [submodule "kitty"]
 	path = kitty
 	url = https://github.com/dracula/kitty.git
+[submodule "rofi/rofi-themes"]
+	path = rofi/rofi-themes
+	url = https://github.com/davatorium/rofi-themes.git
