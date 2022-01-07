@@ -10,19 +10,31 @@
 - link:
     # oh-my-zsh submodule
     ~/.tmux.conf: .tmux/.tmux.conf
+
     # my personal init.vim file
     ~/.config/nvim/init.vim: init.vim
+
     # Rofi settings / themes
     ~/.config/rofi: rofi
-    # Z shell config
+
+    # Z Shell config
     ~/.zshrc: .zshrc
+
+    # Kitty config
     ~/.config/kitty/dracula.conf: kitty/dracula.conf
     ~/.config/kitty/kitty.conf: kitty.conf
 
+    # neofetch
+    ~/.config/neofetch/config.conf: neofetch.conf
+
+    # Scripts
+    ~/.scripts: scripts
+
+
 - shell:
-  - [scripts/git-config.sh, Configure a gitconfig file if none exists]
   - [git submodule update --init --recursive, Installing submodules]
-  - [nvim -c ':PlugInstall', Installing/Updating vim plugins]
+  # - [scripts/git-config.sh, Configure a gitconfig file if none exists]
+  # - [nvim -c ':PlugInstall', Installing/Updating vim plugins]
 
   # more complicated installations
   - 

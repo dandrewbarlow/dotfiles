@@ -11,3 +11,6 @@
 [submodule "rofi/rofi-themes"]
 	path = rofi/rofi-themes
 	url = https://github.com/davatorium/rofi-themes.git
+[submodule "scripts/gitignore"]
+	path = scripts/gitignore
+	url = https://github.com/github/gitignore
