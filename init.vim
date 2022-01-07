@@ -38,8 +38,11 @@ Plug 'ryanoasis/vim-devicons'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+" telescope & dependencies
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
+
 Plug 'glepnir/dashboard-nvim'
 
 " cheat.sh plugin
@@ -69,7 +72,9 @@ if (has("termguicolors"))
  set termguicolors
 endif
 syntax enable
-" colorscheme dracula
+"
+" ? for some reason this plays bad on osx
+colorscheme dracula
 " let g:dracula_transparent_bg = 1
 
 " for nerd comments
