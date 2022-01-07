@@ -27,6 +27,9 @@
     # neofetch
     ~/.config/neofetch/config.conf: neofetch.conf
 
+    # spaceship zsh theme
+    ~/.oh-my-zsh/themes/spaceship.zsh-theme: spaceship-prompt/spaceship.zsh
+
     # Scripts
     ~/.scripts: scripts
 

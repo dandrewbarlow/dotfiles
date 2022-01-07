@@ -14,3 +14,6 @@
 [submodule "scripts/gitignore"]
 	path = scripts/gitignore
 	url = https://github.com/github/gitignore
+[submodule "spaceship-prompt"]
+	path = spaceship-prompt
+	url = https://github.com/spaceship-prompt/spaceship-prompt
