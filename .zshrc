@@ -195,7 +195,7 @@ alias pd='/usr/local/lib/pd-0.51-3/bin/pd-gui'
 alias pygen='python3 generate.py'
 
 # OS SPECIFIC
-if [["$OSTYPE" == "linux-gnu"* ]]; then
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	# package manager
 	# ? note: fedora specific, because that's my distro and I'm lazy
 	alias install='sudo dnf install'
