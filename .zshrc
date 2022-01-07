@@ -203,7 +203,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
 	# open files from command line
 	alias open='xdg-open'
-elif [["$OSTYPE" == "darwin"* ]]; then
+elif [[ "$OSTYPE" == "darwin"* ]]; then
 	alias install='brew install'
 	alias update='brew update && brew upgrade'
 fi
