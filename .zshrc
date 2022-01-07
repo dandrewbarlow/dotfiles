@@ -182,6 +182,9 @@ alias py='python3'
 
 alias z='zathura'
 
+# necessary for kitty to properly ssh
+alias ssh="kitty +kitten ssh"
+
 # Conda shortcuts for ease of use
 alias ca='conda activate'
 alias cl='conda env list'
