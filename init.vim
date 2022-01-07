@@ -6,6 +6,11 @@ call plug#begin()
 "Nerdtree file browser
 Plug 'preservim/nerdtree'
 
+" nerdtree plugins
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
+set encoding=UTF-8
+
 " Asyncronous autocomplete
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -15,6 +20,9 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 let g:deoplete#enable_at_startup = 1
+
+" https://github.com/preservim/nerdcommenter
+Plug 'preservim/nerdcommenter'
 
 "Great looking status bar for vim
 Plug 'bling/vim-airline'
@@ -54,7 +62,7 @@ set guifont=JetBrainsMono-Regular
 set nu rnu
 
 " enable deoplete 
- let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1
 
 " Dracula Settings
 if (has("termguicolors"))
@@ -64,6 +72,12 @@ syntax enable
 " colorscheme dracula
 " let g:dracula_transparent_bg = 1
 
+" for nerd comments
+filetype plugin on
+let g:NERDCreateDefaultMappings = 1
+let g:NERDSpaceDelims = 1
+vmap <C-_> <plug>NERDCommenterToggle
+nmap <C-_> <plug>NERDCommenterToggle
 
 " set default fuzzy finder to telescope
 let g:dashboard_default_executive="telescope"
@@ -80,18 +94,18 @@ let g:dashboard_custom_header = [
 \ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
 \]
 
-" Shortcuts
+" Shortcuts / Bindings
 " ---------------------------------------------------------------------------
 
 " Set NerdTree shortcut to control+n
 nmap <C-n> :NERDTreeToggle<CR>
 
 " Set ctrl-j & ctrl-k to 5 [j | k]
-map <C-j> 5j
-map <C-k> 5k
+nmap <C-j> 5j
+nmap <C-k> 5k
 
-" inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-" inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 
 " set ctrl-h and ctrl-l to switch tabs
 map <C-h> <C-w>h
@@ -106,16 +120,22 @@ imap <C-s> <Esc>:w<CR>a
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 
+" honestly forget what this is for; coc stuff from here:
+" http://vimcasts.org/episodes/neovim-terminal-mappings/
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-" ctrl-space -> autosuggest
 if has('nvim')
+  " ctrl-space -> autosuggest
   inoremap <silent><expr> <c-space> coc#refresh()
+
+  " terminal escape with ctrl+escape
+  tnoremap <C-Esc> <C-\><C-n>
 else
+  " ctrl-space -> autosuggest
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
