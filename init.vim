@@ -1,67 +1,86 @@
-" Andrew Barlow
-" Vim Plugins
 " Vim-Plug Plugins Section 
 " Use :PlugInstall to install plugins
 " ---------------------------------------------------------------------------
 call plug#begin()
 
-" Conquer of Completion
-" https://github.com/neoclide/coc.nvim
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 "Nerdtree file browser
 Plug 'preservim/nerdtree'
-	" nerdtree plugins
-	Plug 'Xuyuanp/nerdtree-git-plugin'
-	Plug 'ryanoasis/vim-devicons'
-	set encoding=UTF-8
-
-" terminal inside vim
-Plug 'kassio/neoterm'
 
 " Asyncronous autocomplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-" Allows shortcut commenting
-" https://github.com/preservim/nerdcommenter
-Plug 'preservim/nerdcommenter'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 
 "Great looking status bar for vim
 Plug 'bling/vim-airline'
 
-" Gotta have my dracula colorscheme
-Plug 'dracula/vim',{'name':'dracula'}
+"Gotta have my dracula colorscheme
+"Plug 'dracula/vim',{'name':'dracula'}
+"Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'Mofiqul/dracula.nvim'
+Plug 'morhetz/gruvbox'
 
-" golang vim plugin
+"Show file icons in nerdtree
+Plug 'ryanoasis/vim-devicons'
+
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'glepnir/dashboard-nvim'
+
+" cheat.sh plugin
+Plug 'RishabhRD/popfix'
+Plug 'RishabhRD/nvim-cheat.sh'
+
+" COQ code completion
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 
 call plug#end()
 
 " Configuration 
 " ---------------------------------------------------------------------------
 
+" Set font
+set guifont=JetBrainsMono-Regular
+
 " Set Hybrid line numbers on startup
 set nu rnu
 
 " enable deoplete 
-let g:deoplete#enable_at_startup = 1
-
-" for nerd comments
-filetype plugin on
-let g:NERDCreateDefaultMappings = 1
-let g:NERDSpaceDelims = 1
-vmap <C-_> <plug>NERDCommenterToggle
-nmap <C-_> <plug>NERDCommenterToggle
-
+ let g:deoplete#enable_at_startup = 1
 
 " Dracula Settings
 if (has("termguicolors"))
  set termguicolors
 endif
 syntax enable
-colorscheme dracula
+" colorscheme dracula
+" let g:dracula_transparent_bg = 1
 
-" Shortcuts / Bindings
+
+" set default fuzzy finder to telescope
+let g:dashboard_default_executive="telescope"
+
+"let g:dashboard_preview_command = 'cat'
+let g:dashboard_preview_pipeline = 'lolcat'
+
+let g:dashboard_custom_header = [
+\ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
+\ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
+\ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
+\ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
+\ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
+\ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
+\]
+
+" Shortcuts
 " ---------------------------------------------------------------------------
 
 " Set NerdTree shortcut to control+n
@@ -82,8 +101,21 @@ map <C-l> <C-w>l
 nmap <C-s> :w<CR>
 imap <C-s> <Esc>:w<CR>a
 
-" terminal mode shortcuts
-" http://vimcasts.org/episodes/neovim-terminal-mappings/
+
+" coc maps
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" ctrl-space -> autosuggest
 if has('nvim')
-	tnoremap <C-Esc> <C-\><C-n>
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
 endif
+
