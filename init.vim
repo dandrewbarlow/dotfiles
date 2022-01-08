@@ -71,6 +71,7 @@ let g:deoplete#enable_at_startup = 1
 if (has("termguicolors"))
  set termguicolors
 endif
+
 syntax enable
 "
 " ? for some reason this plays bad on osx
@@ -127,11 +128,11 @@ nmap <leader>gr <Plug>(coc-references)
 
 " honestly forget what this is for; coc stuff from here:
 " http://vimcasts.org/episodes/neovim-terminal-mappings/
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" inoremap <silent><expr> <TAB>
+      " \ pumvisible() ? "\<C-n>" :
+      " \ <SID>check_back_space() ? "\<TAB>" :
+      " \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 if has('nvim')
   " ctrl-space -> autosuggest
