@@ -16,14 +16,16 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/.cargo/bin/:$PATH"
 
 # Spicetify- spotify customization
-export SPICETIFY_INSTALL="/home/andrew/.spicetify-cli"
+export SPICETIFY_INSTALL="$HOME/.spicetify-cli"
 export PATH="$SPICETIFY_INSTALL:$PATH"
 
 # Processing path 
 export PATH="$PATH:/opt/processing"
 
-export PATH="$PATH:/home/andrew/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
+# Go binaries
+export PATH="$PATH:$HOME/go/bin"
 # CUDA compiler
 CYCLES_CUDA_EXTRA_CFLAGS="-ccbin /usr/local/gcc-10.3.0/bin/gcc"
 

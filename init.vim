@@ -110,6 +110,9 @@ nmap <C-n> :NERDTreeToggle<CR>
 nmap <C-j> 5j
 nmap <C-k> 5k
 
+vmap <C-j> 5j
+vmap <C-k> 5k
+
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 
