@@ -199,13 +199,32 @@ alias pygen='python3 generate.py'
 
 # OS SPECIFIC
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-	# package manager
-	# ? note: fedora specific, because that's my distro and I'm lazy
-	alias install='sudo dnf install'
-	alias update='sudo dnf update && flatpak update'
-
+	
 	# open files from command line
 	alias open='xdg-open'
+	
+	# DISTRO SPECIFIC
+	distro="$(cat /etc/os-release | grep '^NAME' | cut -d "=" -f 2 | sed 's/\"//g' )"
+
+	if [[ "$distro" == "Fedora Linux" ]]; then
+		alias install='sudo dnf install'
+		alias search='dnf search'
+		alias update='sudo dnf update && flatpak update'
+	elif [[ "$distro" == "Arch Linux" ]]; then
+		alias install='yay -S'
+		alias search='yay -Ss'
+		alias update='yay -Syu'
+	# have only checked that Ubuntu's output is correct. Easy fix if I ever use 'em
+	elif [[ "$distro" == "Ubuntu" ]] || \
+	 [[ "$distro" == "Debian" ]] || \
+	 [[ "$distro" == "Mint" ]] || \
+	 [[ "$distro" == "Pop_OS" ]]; then
+		alias install='sudo apt-get install'
+		alias update='sudo apt-get update && sudo apt-get upgrade'
+	else
+		echo "Error detecting distro in .zshrc: ZSH shortcuts may be affected"
+	fi
+	
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 	alias install='brew install'
 	alias update='brew update && brew upgrade'
