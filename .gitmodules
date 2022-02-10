@@ -17,3 +17,6 @@
 [submodule "spaceship-prompt"]
 	path = spaceship-prompt
 	url = https://github.com/spaceship-prompt/spaceship-prompt
+[submodule "scripts/reference"]
+	path = scripts/reference
+	url = https://github.com/Randy8080/reference
