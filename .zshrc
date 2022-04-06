@@ -105,7 +105,7 @@ export EDITOR='nvim'
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	colored-man-pages
-	copydir
+	copypath
 	copyfile
 	cp
 	git
