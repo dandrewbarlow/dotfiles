@@ -25,7 +25,8 @@ let g:deoplete#enable_at_startup = 1
 Plug 'preservim/nerdcommenter'
 
 "Great looking status bar for vim
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 "Gotta have my dracula colorscheme
 "Plug 'dracula/vim',{'name':'dracula'}
