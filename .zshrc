@@ -169,6 +169,9 @@ alias vim='nvim'
 alias vi='nvim'
 alias v='nvim'
 
+# annoying to type out
+alias sys='systemctl'
+
 alias ghci='stack ghci'
 alias ghc='stack ghc'
 
