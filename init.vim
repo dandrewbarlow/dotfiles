@@ -62,6 +62,13 @@ call plug#end()
 " Set font
 set guifont=JetBrainsMono-Regular
 
+" vim-airline settings
+" smart tab line
+let g:airline#extensions#tabline#enabled = 1
+" theme (https://github.com/vim-airline/vim-airline/wiki/Screenshots)
+let g:airline_theme='deus'
+
+
 " Set Hybrid line numbers on startup
 set nu rnu
 
