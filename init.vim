@@ -114,6 +114,8 @@ let g:dashboard_custom_header = [
 " Set NerdTree shortcut to control+n
 nmap <C-n> :NERDTreeToggle<CR>
 
+tnoremap <Esc> <C-\><C-n>
+
 " Set ctrl-j & ctrl-k to 5 [j | k]
 nmap <C-j> 5j
 nmap <C-k> 5k
