@@ -187,6 +187,9 @@ alias py='python3'
 
 alias z='zathura'
 
+# list sizes of files in pwd, human readable, in ascending order
+alias lss='du -sh -- */ | sort -h'
+
 # necessary for kitty to properly ssh
 alias ssh="kitty +kitten ssh"
 
