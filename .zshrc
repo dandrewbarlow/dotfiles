@@ -3,6 +3,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/usr/local/sbin:$PATH"
+export PATH="/opt:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -135,9 +136,10 @@ WHITE='\033[1;37m'
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	colored-man-pages
-	copypath
 	copyfile
+	copypath
 	cp
+	fzf-zsh-plugin
 	git
 	gitignore
 	web-search
@@ -227,7 +229,7 @@ alias lss='du -sh -- */ | sort -h'
 alias pmv='rsync --info=progress2 --remove-source-files -a'
 
 # necessary for kitty to properly ssh
-alias ssh="kitty +kitten ssh"
+# alias ssh="kitty +kitten ssh"
 
 # Conda shortcuts for ease of use
 alias ca='conda activate'
