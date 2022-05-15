@@ -6,6 +6,7 @@ cowsay
 dmenu
 ffmpeg
 fortune
+fzf
 gcc
 gdb
 gnome-tweaks

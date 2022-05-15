@@ -8,6 +8,9 @@ export PATH="/opt:$PATH"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Doom emacs path
+export PATH="$HOME/.doom.d/bin:$PATH"
+
 # Dumb CUDA stuff
 export PATH="$PATH:/usr/local/cuda-11.3/bin"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda-11.3/lib64"
