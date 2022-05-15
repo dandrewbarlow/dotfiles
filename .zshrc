@@ -9,7 +9,7 @@ export PATH="/opt:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
 
 # Doom emacs path
-export PATH="$HOME/.doom.d/bin:$PATH"
+export PATH="$HOME/.emacs.d/bin:$PATH"
 
 # Dumb CUDA stuff
 export PATH="$PATH:/usr/local/cuda-11.3/bin"
