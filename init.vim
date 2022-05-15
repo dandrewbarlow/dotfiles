@@ -128,6 +128,16 @@ vmap <C-k> 5k
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 
+" auto close paired chars
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+inoremap {<CR> {<CR>}<C-o>O
+
 " set ctrl-h and ctrl-l to switch tabs
 map <C-h> <C-w>h
 map <C-l> <C-w>l
