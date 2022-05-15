@@ -204,6 +204,10 @@ alias vim='nvim'
 alias vi='nvim'
 alias v='nvim'
 
+# emacs shortcuts
+alias emacs="emacsclient -c -a 'emacs'"
+alias e="emacsclient -c -a 'emacs'"
+
 # annoying to type out
 alias sys='systemctl'
 
