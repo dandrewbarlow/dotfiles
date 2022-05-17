@@ -30,6 +30,10 @@
     # spaceship zsh theme
     ~/.oh-my-zsh/themes/spaceship.zsh-theme: spaceship-prompt/spaceship.zsh
 
+    # ZSH custom plugins
+    ~/.oh-my-zsh/custom/plugins/fzf-zsh-plugin: zsh_plugins/fzf-zsh-plugin
+    ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: zsh_plugins/zsh-autosuggestions
+
     # Scripts
     ~/.scripts: scripts
 

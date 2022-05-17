@@ -20,3 +20,9 @@
 [submodule "scripts/reference"]
 	path = scripts/reference
 	url = https://github.com/Randy8080/reference
+[submodule "zsh_plugins/zsh-autosuggestions"]
+	path = zsh_plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "zsh_plugins/fzf-zsh-plugin"]
+	path = zsh_plugins/fzf-zsh-plugin
+	url = https://github.com/unixorn/fzf-zsh-plugin
