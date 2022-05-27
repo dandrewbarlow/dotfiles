@@ -3,6 +3,9 @@
 " ---------------------------------------------------------------------------
 call plug#begin()
 
+" coc autocomplete
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 "Nerdtree file browser
 Plug 'preservim/nerdtree'
 
@@ -10,16 +13,6 @@ Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 set encoding=UTF-8
-
-" Asyncronous autocomplete
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
 
 " https://github.com/preservim/nerdcommenter
 Plug 'preservim/nerdcommenter'
@@ -50,14 +43,14 @@ Plug 'glepnir/dashboard-nvim'
 Plug 'RishabhRD/popfix'
 Plug 'RishabhRD/nvim-cheat.sh'
 
-" COQ code completion
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 
 call plug#end()
 
 " Configuration 
 " ---------------------------------------------------------------------------
+
+" COC language servers
+let g:coc_global_extensions = [ 'coc-css', 'coc-eslint8', 'coc-go', 'coc-jedi', 'coc-json', 'coc-markdownlint', 'coc-marketplace', 'coc-r-lsp', 'coc-rls', 'coc-snippets', 'coc-tailwindcss', 'coc-tslint-plugin', 'coc-vimlsp' ]
 
 " Set font
 set guifont=JetBrainsMono-Regular
@@ -68,12 +61,11 @@ let g:airline#extensions#tabline#enabled = 1
 " theme (https://github.com/vim-airline/vim-airline/wiki/Screenshots)
 let g:airline_theme='deus'
 
-
 " Set Hybrid line numbers on startup
 set nu rnu
 
 " enable deoplete 
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 
 " Dracula Settings
 if (has("termguicolors"))
