@@ -3,6 +3,14 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
+;; ==================================================
+
+;; maximize screen size on startup
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+
+;; different font names for OSX vs linux
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 18)
+	doom-variable-pitch-font (font-spec :family "Helvetica" :size 16))
 
 ;; NOTE: for privacy, these are defined in file '.dir-locals.el'
 ;;
@@ -16,6 +24,8 @@
 ;;(setq user-full-name "John Doe"
       ;;user-mail-address "john@doe.com")
 
+;; ==================================================
+
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
 ;; - `doom-font' -- the primary font to use
@@ -26,8 +36,6 @@
 ;; - `doom-serif-font' -- for the `fixed-pitch-serif' face
 ;;
 
-;; (setq doom-font (font-spec :family "JetBrainsMono NF" :size 18)
-;; 	doom-variable-pitch-font (font-spec :family "Helvetica" :size 16))
 
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
