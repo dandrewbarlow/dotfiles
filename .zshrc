@@ -39,9 +39,10 @@ CYCLES_CUDA_EXTRA_CFLAGS="-ccbin /usr/local/gcc-10.3.0/bin/gcc"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
 
 export EDITOR='nvim'
+
+export DOOMDIR="$HOME/.config/doom/"
 
 # export LESS_TERMCAP_mb=$'\e[1;32m'
 # export LESS_TERMCAP_md=$'\e[1;32m'
@@ -330,7 +331,16 @@ PERL_MB_OPT="--install_base \"/Users/Andrew/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/Andrew/perl5"; export PERL_MM_OPT;
 [ -f "/Users/Andrew/.ghcup/env" ] && source "/Users/Andrew/.ghcup/env" # ghcup-env
 
-# Shell Startup Script ==================================================
+# Shell Startup ==================================================
 # just gives a lil bit of life to the terminal
+
+# if starship is installed, use that as theme instead of spaceship (faster)
+if [ ! -z "$(which starship)" ] 
+then
+	eval "$(starship init zsh)"
+else
+	ZSH_THEME="spaceship"
+fi
+
 [ -f "$HOME/.scripts/terminal_startup.sh" ] && "$HOME/.scripts/terminal_startup.sh"
 

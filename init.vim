@@ -6,9 +6,6 @@ call plug#begin()
 " coc autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-"Nerdtree file browser
-Plug 'preservim/nerdtree'
-
 " nerdtree plugins
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
@@ -17,26 +14,35 @@ set encoding=UTF-8
 " https://github.com/preservim/nerdcommenter
 Plug 'preservim/nerdcommenter'
 
+"Nerdtree file browser
+Plug 'preservim/nerdtree'
+
+" shows git changes in left gutter
+Plug 'airblade/vim-gitgutter'
+
 "Great looking status bar for vim
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 "Gotta have my dracula colorscheme
-"Plug 'dracula/vim',{'name':'dracula'}
-"Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'Mofiqul/dracula.nvim'
 Plug 'morhetz/gruvbox'
 
 "Show file icons in nerdtree
 Plug 'ryanoasis/vim-devicons'
 
+" golang vim plugin
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
-" telescope & dependencies
+" telescope (a fzf plugin) & dependencies
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 
+" fuzzy file finder w/ ctrl-p
+Plug 'ctrlpvim/ctrlp.vim'
+
+" startup dashboard
 Plug 'glepnir/dashboard-nvim'
 
 " cheat.sh plugin
@@ -50,7 +56,23 @@ call plug#end()
 " ---------------------------------------------------------------------------
 
 " COC language servers
-let g:coc_global_extensions = [ 'coc-css', 'coc-eslint8', 'coc-go', 'coc-jedi', 'coc-json', 'coc-markdownlint', 'coc-marketplace', 'coc-r-lsp', 'coc-rls', 'coc-snippets', 'coc-tailwindcss', 'coc-tslint-plugin', 'coc-vimlsp' ]
+let g:coc_global_extensions = [ 
+	\'coc-clangd', 
+	\'coc-css', 
+	\'coc-go', 
+	\'coc-html',
+	\'coc-json', 
+	\'coc-markdownlint', 
+	\'coc-marketplace', 
+	\'coc-pyright', 
+	\'coc-r-lsp', 
+	\'coc-rust-analyzer', 
+	\'coc-sh', 
+	\'coc-snippets', 
+	\'coc-tailwindcss', 
+	\'coc-tsserver', 
+	\'coc-vimlsp' 
+\]
 
 " Set font
 set guifont=JetBrainsMono-Regular
