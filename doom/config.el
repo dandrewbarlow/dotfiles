@@ -26,8 +26,8 @@
 ;; - `doom-serif-font' -- for the `fixed-pitch-serif' face
 ;;
 
-(setq doom-font (font-spec :family "JetBrainsMono NF" :size 18)
-	doom-variable-pitch-font (font-spec :family "Helvetica" :size 16))
+;; (setq doom-font (font-spec :family "JetBrainsMono NF" :size 18)
+;; 	doom-variable-pitch-font (font-spec :family "Helvetica" :size 16))
 
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
