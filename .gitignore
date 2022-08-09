@@ -1,2 +1,3 @@
 music/
 .gitconfig
+doom/.dir-locals.el

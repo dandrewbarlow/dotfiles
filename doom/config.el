@@ -4,10 +4,17 @@
 ;; sync' after modifying this file!
 
 
+;; NOTE: for privacy, these are defined in file '.dir-locals.el'
+;;
+;; file-format:
+;; (nil . ((user-full-name . "John Doe")
+;;        (user-email-address . "john@doe.com")))
+;;
+;;
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+;;(setq user-full-name "John Doe"
+      ;;user-mail-address "john@doe.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
