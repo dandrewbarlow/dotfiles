@@ -55,11 +55,12 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type 'relative)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/Sync/org/")
+(setq org-agenda-files (list "~/Sync/org/agenda"))
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -93,3 +94,12 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(add-to-list 'load-path "/path/to/processing2-emacs/")
+(autoload 'processing-mode "processing-mode" "Processing mode" t)
+(add-to-list 'auto-mode-alist '("\\.pde$" . processing-mode))
+
+;; KEYBINDINGS ==================================================
+
+;; Ctrl+s to save
+(global-set-key (kbd "C-s") 'save-buffer)
