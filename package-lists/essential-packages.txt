@@ -1,5 +1,6 @@
 anaconda
 arc-theme
+bat
 cmatrix
 cmus
 code

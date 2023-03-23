@@ -11,8 +11,10 @@
     # oh-my-zsh submodule
     ~/.tmux.conf: .tmux/.tmux.conf
 
-    # my personal init.vim file
-    ~/.config/nvim/init.vim: init.vim
+    # Neovim config files
+    ~/.config/nvim/: 
+        glob: true
+        path: vim/*
 
     # Rofi settings / themes
     ~/.config/rofi: rofi

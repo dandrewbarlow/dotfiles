@@ -34,5 +34,5 @@ cd "$HOME"
 # prevents my annoying startup flex in vscode
 if [ "$TERM_PROGRAM" != "vscode" ];
 then
-	neofetch
+	"$HOME/scripts/veritas/veritas.py" -c
 fi
