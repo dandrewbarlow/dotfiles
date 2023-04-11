@@ -16,6 +16,9 @@
         glob: true
         path: NvChad/*
 
+    # NvChad custom definitions
+    NvChad/lua/custom: vim/nvchad_custom
+
     # Rofi settings / themes
     ~/.config/rofi: rofi
 
