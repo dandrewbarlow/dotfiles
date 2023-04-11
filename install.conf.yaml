@@ -14,7 +14,7 @@
     # Neovim config files
     ~/.config/nvim/: 
         glob: true
-        path: vim/*
+        path: NvChad/*
 
     # Rofi settings / themes
     ~/.config/rofi: rofi
@@ -28,9 +28,6 @@
 
     # neofetch
     ~/.config/neofetch/config.conf: neofetch.conf
-
-      # DOOM emacs
-    ~/.config/doom: doom
 
     # spaceship zsh theme
     ~/.oh-my-zsh/themes/spaceship.zsh-theme: spaceship-prompt/spaceship.zsh

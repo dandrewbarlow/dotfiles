@@ -258,7 +258,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	
 	# open files from command line
 	alias open='xdg-open'
-	
+
 	# DISTRO SPECIFIC
 	distro="$(cat /etc/os-release | grep '^NAME' | cut -d "=" -f 2 | sed 's/\"//g' )"
 

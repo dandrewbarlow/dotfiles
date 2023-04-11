@@ -2,30 +2,44 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+	shallow = true
 [submodule ".tmux"]
 	path = .tmux
 	url = https://github.com/gpakosz/.tmux
+	shallow = true
 [submodule "kitty"]
 	path = kitty
 	url = https://github.com/dracula/kitty.git
+	shallow = true
 [submodule "rofi/rofi-themes"]
 	path = rofi/rofi-themes
 	url = https://github.com/davatorium/rofi-themes.git
+	shallow = true
 [submodule "scripts/gitignore"]
 	path = scripts/gitignore
 	url = https://github.com/github/gitignore
+	shallow = true
 [submodule "spaceship-prompt"]
 	path = spaceship-prompt
 	url = https://github.com/spaceship-prompt/spaceship-prompt
+	shallow = true
 [submodule "scripts/reference"]
 	path = scripts/reference
 	url = https://github.com/Randy8080/reference
+	shallow = true
 [submodule "zsh_plugins/zsh-autosuggestions"]
 	path = zsh_plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
+	shallow = true
 [submodule "zsh_plugins/fzf-zsh-plugin"]
 	path = zsh_plugins/fzf-zsh-plugin
 	url = https://github.com/unixorn/fzf-zsh-plugin
+	shallow = true
 [submodule "cowsay-files"]
 	path = cowsay-files
 	url = https://github.com/paulkaefer/cowsay-files
+	shallow = true
+[submodule "NvChad"]
+	path = NvChad
+	url = https://github.com/NvChad/NvChad
+	shallow = true
