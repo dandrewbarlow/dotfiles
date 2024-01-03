@@ -107,6 +107,12 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	 [[ "$distro" == "Pop_OS" ]]; then
 		alias install='sudo apt-get install'
 		alias update='sudo apt-get update && sudo apt-get upgrade'
+  elif [[ "$distro" == "SteamOS" ]]; then
+    alias install='brew install'
+    alias search='brew search'
+    alias update='brew update && brew upgrade && flatpak update'
+    alias flatinst='flatpak install'
+    alias flatsearch='flatpak search'
 	else
 		echo "Error detecting distro in .zshrc: ZSH shortcuts may be affected"
 	fi

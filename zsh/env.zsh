@@ -47,10 +47,20 @@ export EDITOR='nvim'
 
 export DOOMDIR="$HOME/.config/doom/"
 
+export PATH="$HOME/.rbenv/bin:$PATH"
+[ ! -z "$(which rbenv)" ] && eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
 # for secrets, shhh
-set -a
-. "$HOME/.env"
-set +a
+if [ -e "$HOME/.env" ]; then
+  set -a
+  . "$HOME/.env"
+  set +a
+fi
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[[ -f /home/andrew/.npm/_npx/6913fdfd1ea7a741/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/andrew/.npm/_npx/6913fdfd1ea7a741/node_modules/tabtab/.completions/electron-forge.zsh
 
 # export LESS_TERMCAP_mb=$'\e[1;32m'
 # export LESS_TERMCAP_md=$'\e[1;32m'
