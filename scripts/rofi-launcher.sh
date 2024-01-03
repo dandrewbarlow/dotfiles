@@ -13,9 +13,9 @@
 # column	row				row_center			screen			row_dock		row_dropdown
 
 theme="screen"
-dir="$HOME/.config/rofi/"
+dir="$HOME/.config/rofi"
 
 # comment these lines to disable random style
-theme="blurry.rasi"
+theme="launchpad"
 
 rofi -no-lazy-grab -show drun -modi drun -theme $dir/"$theme"

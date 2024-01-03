@@ -1,3 +1,6 @@
 music/
 .gitconfig
 doom/.dir-locals.el
+.env
+env
+rofi/*

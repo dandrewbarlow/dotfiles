@@ -8,12 +8,19 @@
 - clean: ['~']
 
 - link:
+    # zsh files
+    ~/.config/zsh/custom:
+      create: true
+      glob: true
+      path: zsh/*
+    
     # oh-my-zsh submodule
     ~/.tmux.conf: .tmux/.tmux.conf
 
     # Neovim config files
     ~/.config/nvim/: 
         glob: true
+        create: true
         path: NvChad/*
 
     # NvChad custom definitions
@@ -23,14 +30,20 @@
     ~/.config/rofi: rofi
 
     # Z Shell config
-    ~/.zshrc: .zshrc
+    ~/.zshrc: zshrc
+
+    ~/.oh-my-zsh/custom/aliases.zsh: aliases.zsh
+
+    ~/.env: env
 
     # Kitty config
     ~/.config/kitty/dracula.conf: kitty/dracula.conf
     ~/.config/kitty/kitty.conf: kitty.conf
 
     # neofetch
-    ~/.config/neofetch/config.conf: neofetch.conf
+    ~/.config/neofetch/config.conf: 
+      create: true
+      path: neofetch.conf
 
     # spaceship zsh theme
     ~/.oh-my-zsh/themes/spaceship.zsh-theme: spaceship-prompt/spaceship.zsh
@@ -40,7 +53,9 @@
     ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: zsh_plugins/zsh-autosuggestions
 
     # Scripts
-    ~/.scripts: scripts
+    ~/.scripts: 
+      create: true
+      path: scripts
 
 
 - shell:

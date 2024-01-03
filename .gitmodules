@@ -43,3 +43,6 @@
 	path = NvChad
 	url = https://github.com/NvChad/NvChad
 	shallow = true
+[submodule "rofi/rofi-themes-collection"]
+	path = rofi/rofi-themes-collection
+	url = https://github.com/newmanls/rofi-themes-collection.git

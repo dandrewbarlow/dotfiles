@@ -34,5 +34,19 @@ cd "$HOME"
 # prevents my annoying startup flex in vscode
 if [ "$TERM_PROGRAM" != "vscode" ];
 then
-	"$HOME/scripts/veritas/veritas.py" -c
+	# "$HOME/scripts/veritas/veritas.py" -c
+  # neofetch
+  
+  # define some terminal color codes
+  BLUE='\033[0;34m'
+  RED='\033[0;31m'
+  NC='\033[0m' # No Color
+
+  # print TODO on term startup
+  if [ -e "$HOME/TODO.md" ]; then
+    echo "Welcome Andrew"
+    echo ""
+    echo -e "${BLUE}TODO:${NC}" 
+    cat "$HOME/TODO.md" 
+  fi 
 fi
