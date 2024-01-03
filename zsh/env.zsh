@@ -48,7 +48,7 @@ export EDITOR='nvim'
 export DOOMDIR="$HOME/.config/doom/"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
-[ "$(which rbenv)" -ne "rbenv not found" ] && eval "$(rbenv init -)"
+[ "$(which rbenv)" == "rbenv not found" ] && eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 # for secrets, shhh
