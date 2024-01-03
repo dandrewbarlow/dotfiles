@@ -49,8 +49,11 @@
     ~/.oh-my-zsh/themes/spaceship.zsh-theme: spaceship-prompt/spaceship.zsh
 
     # ZSH custom plugins
-    ~/.oh-my-zsh/custom/plugins/fzf-zsh-plugin: zsh_plugins/fzf-zsh-plugin
-    ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: zsh_plugins/zsh-autosuggestions
+    ~/.oh-my-zsh/custom/plugins/: 
+      create: true
+      glob: true
+      path: zsh_plugins/*
+
 
     # Scripts
     ~/.scripts: 

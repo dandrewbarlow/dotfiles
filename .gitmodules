@@ -46,3 +46,6 @@
 [submodule "rofi/rofi-themes-collection"]
 	path = rofi/rofi-themes-collection
 	url = https://github.com/newmanls/rofi-themes-collection.git
+[submodule "zsh/zsh-syntax-highlighting"]
+	path = zsh_plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
