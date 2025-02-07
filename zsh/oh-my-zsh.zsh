@@ -73,6 +73,9 @@ plugins=(
   zsh-syntax-highlighting
 )
 
+# fzf tab completion
+source $ZSH/custom/plugins/fzf-tab-completion/zsh/fzf-zsh-completion.sh
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration

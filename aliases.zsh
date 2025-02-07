@@ -99,7 +99,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	elif [[ "$distro" == "Arch Linux" ]]; then
 		alias install='yay -S'
 		alias search='yay -Ss'
-		alias update='yay -Syu'
+		alias update='yay -Syu && flatpak update'
 	# have only checked that Ubuntu's output is correct. Easy fix if I ever use 'em
 	elif [[ "$distro" == "Ubuntu" ]] || \
 	 [[ "$distro" == "Debian" ]] || \

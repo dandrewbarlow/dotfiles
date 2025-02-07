@@ -36,3 +36,11 @@ function cdtmp {
   cd "$TMP"
 }
 
+# Distro specific helper functions
+
+distro="$(cat /etc/os-release | grep '^NAME' | cut -d "=" -f 2 | sed 's/\"//g' )"
+if [[ "$distro" == "Arch Linux" ]]; then
+  function sin {
+    search "$@" | grep '^[[:alpha:]]' | fzf --tac | cut --delimiter " " --fields 1
+  }
+fi

@@ -1,0 +1,95 @@
+Dconf Editor	ca.desrt.dconf-editor	45.0.1	stable	fedora	system
+GitKraken	com.axosoft.GitKraken	10.0.2	stable	flathub	system
+Discord	com.discordapp.Discord	0.0.57	stable	flathub	system
+Alex Kryuchkov	com.github.alexkdeveloper.desktop-files-creator	1.2.7	stable	flathub	system
+Mandelbulber2	com.github.buddhi1980.mandelbulber2	2.31	stable	flathub	system
+Tuner	com.github.louis77.tuner	1.4.0	stable	flathub	system
+Martin Abente Lahaye	com.github.tchx84.Flatseal	2.2.0	stable	flathub	system
+Heroic Games Launcher	com.heroicgameslauncher.hgl	v2.14.1	stable	flathub	system
+Moonlight	com.moonlight_stream.Moonlight	6.0.0	stable	flathub	system
+Plex	com.plexamp.Plexamp	4.10.1	stable	flathub	system
+Slack	com.slack.Slack	4.38.125	stable	flathub	system
+Spotify	com.spotify.Client	1.2.37.701.ge66eb7bc	stable	flathub	system
+SGDBoop	com.steamgriddb.SGDBoop	1.2.8	stable	flathub	system
+Sweet Home 3D	com.sweethome3d.Sweethome3d	7.4	stable	flathub	system
+Todoist: To-Do List & Tasks	com.todoist.Todoist	8.10.1	stable	flathub	system
+Steam Link	com.valvesoftware.SteamLink	1.3.9.258	stable	flathub	system
+Shortwave	de.haeckerfelix.Shortwave	3.2.0	stable	flathub	system
+Sunshine	dev.lizardbyte.app.Sunshine	0.23.1	stable	flathub	system
+HandBrake	fr.handbrake.ghb	1.8.1	stable	flathub	system
+GeForce NOW Electron	io.github.hmlendea.geforcenow-electron	2.1.1	stable	flathub	system
+RSS Guard	io.github.martinrotter.rssguard	4.7.2	stable	flathub	system
+BoilR	io.github.philipk.boilr	1.9.4	stable	flathub	system
+GitHub Desktop	io.github.shiftey.Desktop	3.3.18-linux1	stable	flathub	system
+NewsFlash	io.gitlab.news_flash.NewsFlash	3.3.0	stable	flathub	system
+Obsidian	md.obsidian.Obsidian	1.6.3	stable	flathub	system
+Purr Data	net.purrdata.PurrData	2.19.3	stable	flathub	system
+RPCS3	net.rpcs3.RPCS3	0.0.32-1-5b973448	stable	flathub	system
+Ardour Developers	org.ardour.Ardour	8.6.0	stable	flathub	system
+Chromium Web Browser	org.chromium.Chromium	126.0.6478.114	stable	flathub	system
+Codecs	org.chromium.Chromium.Codecs		stable	flathub	system
+darktable	org.darktable.Darktable	4.8.0	stable	flathub	system
+Fedora Platform	org.fedoraproject.Platform	40	f40	fedora	system
+FreeCAD	org.freecadweb.FreeCAD	0.21.2.33771	stable	flathub	system
+Freedesktop Platform	org.freedesktop.Platform	21.08.22	21.08	flathub	system
+Freedesktop Platform	org.freedesktop.Platform	22.08.25	22.08	flathub	system
+Freedesktop Platform	org.freedesktop.Platform	23.08.20	23.08	flathub	system
+i386	org.freedesktop.Platform.Compat.i386		23.08	flathub	system
+Mesa	org.freedesktop.Platform.GL.default	21.3.9	21.08	flathub	system
+Mesa	org.freedesktop.Platform.GL.default	24.0.7	22.08	flathub	system
+Mesa (Extra)	org.freedesktop.Platform.GL.default	24.0.7	22.08-extra	flathub	system
+Mesa	org.freedesktop.Platform.GL.default	24.1.1	23.08	flathub	system
+Mesa (Extra)	org.freedesktop.Platform.GL.default	24.1.1	23.08-extra	flathub	system
+nvidia-550-90-07	org.freedesktop.Platform.GL.nvidia-550-90-07		1.4	flathub	system
+Mesa	org.freedesktop.Platform.GL32.default	24.1.1	23.08	flathub	system
+nvidia-535-113-01	org.freedesktop.Platform.GL32.nvidia-535-113-01		1.4	flathub	system
+nvidia-535-129-03	org.freedesktop.Platform.GL32.nvidia-535-129-03		1.4	flathub	system
+nvidia-545-29-06	org.freedesktop.Platform.GL32.nvidia-545-29-06		1.4	flathub	system
+nvidia-550-54-14	org.freedesktop.Platform.GL32.nvidia-550-54-14		1.4	flathub	system
+nvidia-550-67	org.freedesktop.Platform.GL32.nvidia-550-67		1.4	flathub	system
+nvidia-550-76	org.freedesktop.Platform.GL32.nvidia-550-76		1.4	flathub	system
+nvidia-550-78	org.freedesktop.Platform.GL32.nvidia-550-78		1.4	flathub	system
+nvidia-550-90-07	org.freedesktop.Platform.GL32.nvidia-550-90-07		1.4	flathub	system
+MangoHud	org.freedesktop.Platform.VulkanLayer.MangoHud	0.7.2	23.08	flathub	system
+ffmpeg-full	org.freedesktop.Platform.ffmpeg-full		23.08	flathub	system
+openh264	org.freedesktop.Platform.openh264	2.1.0	2.0	flathub	system
+openh264	org.freedesktop.Platform.openh264	2.1.0	2.2.0	flathub	system
+openh264	org.freedesktop.Platform.openh264	2.1.0	2.3.1	flathub	system
+openh264	org.freedesktop.Platform.openh264	2.4.1	2.4.1	flathub	system
+Freedesktop SDK	org.freedesktop.Sdk	21.08.22	21.08	flathub	system
+Freedesktop SDK	org.freedesktop.Sdk	22.08.25	22.08	flathub	system
+Freedesktop SDK	org.freedesktop.Sdk	23.08.20	23.08	flathub	system
+OpenJDK 11 SDK Extension	org.freedesktop.Sdk.Extension.openjdk11		21.08	flathub	system
+HydraPaper	org.gabmus.hydrapaper	3.3.2	stable	flathub	system
+GNU Image Manipulation Program	org.gimp.GIMP	2.10.38	stable	flathub	system
+Manual	org.gimp.GIMP.Manual		2.10	flathub	system
+GNOME Application Platform version 45	org.gnome.Platform		45	flathub	system
+GNOME Application Platform version 46	org.gnome.Platform		46	flathub	system
+Arc-Dark Gtk theme	org.gtk.Gtk3theme.Arc-Dark		3.22	flathub	system
+JDownloader	org.jdownloader.JDownloader	2.0	stable	flathub	system
+KDE Application Platform	org.kde.Platform		5.15-22.08	flathub	system
+KDE Application Platform	org.kde.Platform		5.15-23.08	flathub	system
+KDE Application Platform	org.kde.Platform		6.6	flathub	system
+KDE Application Platform	org.kde.Platform		6.7	flathub	system
+QGnomePlatform	org.kde.PlatformTheme.QGnomePlatform		5.15-22.08	flathub	system
+QGnomePlatform	org.kde.PlatformTheme.QGnomePlatform		5.15-23.08	flathub	system
+QGnomePlatform	org.kde.PlatformTheme.QGnomePlatform		6.6	flathub	system
+QAdwaitaDecorations	org.kde.WaylandDecoration.QAdwaitaDecorations		5.15-22.08	flathub	system
+QAdwaitaDecorations	org.kde.WaylandDecoration.QAdwaitaDecorations		5.15-23.08	flathub	system
+QAdwaitaDecorations	org.kde.WaylandDecoration.QAdwaitaDecorations		6.6	flathub	system
+QAdwaitaDecorations	org.kde.WaylandDecoration.QAdwaitaDecorations		6.7	flathub	system
+QGnomePlatform-decoration	org.kde.WaylandDecoration.QGnomePlatform-decoration		5.15-22.08	flathub	system
+QGnomePlatform-decoration	org.kde.WaylandDecoration.QGnomePlatform-decoration		5.15-23.08	flathub	system
+Kasts	org.kde.kasts	24.05.1	stable	flathub	system
+Krita Foundation	org.kde.krita	5.2.2	stable	flathub	system
+RetroArch	org.libretro.RetroArch	1.19.1	stable	flathub	system
+OpenMW Contributors	org.openmw.OpenMW	0.48.0	stable	flathub	system
+Prism Launcher	org.prismlauncher.PrismLauncher	8.4	stable	flathub	system
+Ryujinx	org.ryujinx.Ryujinx	1.1.1336	stable	flathub	system
+Tor Browser Launcher	org.torproject.torbrowser-launcher	0.3.7	stable	flathub	system
+VLC	org.videolan.VLC	3.0.21	stable	flathub	system
+yuzu Emulator Team	org.yuzu_emu.yuzu	mainline-0-1734	stable	flathub	system
+Pocket Casts	tech.feliciano.pocket-casts	0.5.0	stable	flathub	system
+Plex HTPC	tv.plex.PlexHTPC	1.63.1	stable	flathub	system
+Zoom	us.zoom.Zoom	6.0.12.5501	stable	flathub	system
+Splash	xyz.splashmapper.Splash	0.10.12	stable	flathub	system
