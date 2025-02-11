@@ -21,13 +21,7 @@
     ~/.config/nvim/: 
         glob: true
         create: true
-        path: NvChad/*
-
-    # NvChad custom definitions
-    NvChad/lua/custom: vim/nvchad_custom
-
-    # Rofi settings / themes
-    ~/.config/rofi: rofi
+        path: nvim/*
 
     # Z Shell config
     ~/.zshrc: zshrc
