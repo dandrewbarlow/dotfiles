@@ -41,6 +41,6 @@
 [submodule "zsh/zsh-syntax-highlighting"]
 	path = zsh_plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "zsh_plugins/fzf-tab-completion"]
-	path = zsh_plugins/fzf-tab-completion
-	url = https://github.com/lincheney/fzf-tab-completion
+[submodule "zsh_plugins/fzf-tab"]
+	path = zsh_plugins/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab

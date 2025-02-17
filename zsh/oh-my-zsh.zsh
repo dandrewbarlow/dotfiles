@@ -65,16 +65,16 @@ plugins=(
 	copyfile
 	copypath
 	cp
+	fzf-tab
 	fzf-zsh-plugin
 	git
 	gitignore
 	web-search
 	zsh-autosuggestions
-  zsh-syntax-highlighting
+	zsh-syntax-highlighting
 )
 
-# fzf tab completion
-source $ZSH/custom/plugins/fzf-tab-completion/zsh/fzf-zsh-completion.sh
+source $HOME/.config/zsh/custom/fzf-tab.zsh
 
 source $ZSH/oh-my-zsh.sh
 
