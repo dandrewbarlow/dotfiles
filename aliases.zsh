@@ -13,6 +13,11 @@
 # This apparently allows the shell to check the next word
 alias sudo='sudo '
 
+# use eza w/ icons to list dir contents
+if [ ! -z "$(which eza)" ]; then
+	alias ls='eza --icons'
+fi
+
 # gotta have my neovim
 alias vim='nvim'
 alias vi='nvim'

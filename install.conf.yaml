@@ -13,9 +13,9 @@
       create: true
       glob: true
       path: zsh/*
-    
-    # oh-my-zsh submodule
-    ~/.tmux.conf: .tmux/.tmux.conf
+
+      # TMUX
+    ~/.tmux.conf: tmux/tmux.conf
 
     # Neovim config files
     ~/.config/nvim/: 
@@ -61,6 +61,9 @@
   # - [nvim -c ':PlugInstall', Installing/Updating vim plugins]
 
   # more complicated installations
+  - 
+    - command: git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    - description: Installing tmux plugin manager
   - 
     - command: if [ ! -z "$(which code)" ]; then code --install-extension "$(cat package-lists/vscode-extensions.txt)"; fi
     - description: Installing VSCode Plugins

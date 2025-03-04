@@ -3,10 +3,6 @@
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
 	shallow = true
-[submodule ".tmux"]
-	path = .tmux
-	url = https://github.com/gpakosz/.tmux
-	shallow = true
 [submodule "kitty"]
 	path = kitty
 	url = https://github.com/dracula/kitty.git
