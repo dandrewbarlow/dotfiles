@@ -6,6 +6,13 @@
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/opt:$PATH"
 
+export VDPAU_DRIVER='nvidia'
+
+# man pages in bat
+if [ ! -z "$(which bat)" ]; then
+  export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
