@@ -40,3 +40,6 @@
 [submodule "zsh_plugins/fzf-tab"]
 	path = zsh_plugins/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab
+[submodule "nvim"]
+	path = nvim
+	url = https://github.com/dandrewbarlow/nvim
