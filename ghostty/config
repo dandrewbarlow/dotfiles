@@ -1,0 +1,9 @@
+
+# theme
+config-file = theme
+
+# fonts
+config-file = fonts
+
+# keybindings
+config-file = keybindings

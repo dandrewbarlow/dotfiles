@@ -1,0 +1,8 @@
+font-family = "JetBrainsMono Nerd Font"
+font-family-bold = "JetBrainsMono NF Bold"
+font-family-italic = "JetBrainsMono NF Italic"
+font-family-bold-italic = "JetBrainsMono NF Bold Italic"
+
+font-feature = liga
+
+font-size = 14

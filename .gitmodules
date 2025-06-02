@@ -43,3 +43,6 @@
 [submodule "nvim"]
 	path = nvim
 	url = https://github.com/dandrewbarlow/nvim
+[submodule "yazi/flavors"]
+	path = yazi/flavors
+	url = https://github.com/yazi-rs/flavors

@@ -1,0 +1,25 @@
+
+# working of folke's config
+# https://github.com/folke/dot/blob/master/config/ghostty/config
+
+# vim navigation of splits
+
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+j=goto_split:down
+keybind = ctrl+shift+k=goto_split:top
+keybind = ctrl+shift+l=goto_split:right
+
+keybind = ctrl+alt+l=new_split:right
+keybind = ctrl+alt+j=new_split:down
+
+keybind = ctrl+shift+enter=new_split:auto
+
+keybind = alt+shift+h=previous_tab
+keybind = alt+shift+l=next_tab
+
+# window controls
+keybind = ctrl+shift+m=toggle_maximize
+keybind = ctrl+shift+f=toggle_fullscreen
+
+# ghostty controls
+keybind = ctrl+shift+r=reload_config
