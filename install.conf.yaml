@@ -34,6 +34,28 @@
     ~/.config/kitty/dracula.conf: kitty/dracula.conf
     ~/.config/kitty/kitty.conf: kitty.conf
 
+    # hyprland config
+    ~/.config/hypr:
+      create: true
+      path: hyprland/hypr
+
+    # waybar config
+    ~/.config/waybar:
+      create: true
+      path: hyprland/waybar
+
+    # ghostty
+    ~/.config/ghostty/:
+      glob: true
+      create: true
+      path: ghostty/*
+
+    # yazi
+    ~/.config/yazi/:
+      glob: true
+      create: true
+      path: yazi/*
+
     # neofetch
     ~/.config/neofetch/config.conf: 
       create: true

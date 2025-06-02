@@ -15,7 +15,7 @@ alias sudo='sudo '
 
 # use eza w/ icons to list dir contents
 if [ ! -z "$(which eza)" ]; then
-	alias ls='eza --icons'
+	alias ls='eza --icons --color=always'
 fi
 
 # gotta have my neovim
@@ -88,6 +88,9 @@ alias radio="$HOME/scripts/radio/radio.py"
 # refresh terminal
 alias re="source $HOME/.zshrc"
 
+# may cause confusion at some point, but think I'm gonna try to make the switch
+alias docker="podman"
+
 # OS SPECIFIC
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	
@@ -107,7 +110,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 		alias update='yay -Syu && flatpak update'
 	# have only checked that Ubuntu's output is correct. Easy fix if I ever use 'em
 	elif [[ "$distro" == "Ubuntu" ]] || \
-	 [[ "$distro" == "Debian" ]] || \
+	 [[ "$distro" == "Debian GNU/Linux" ]] || \
 	 [[ "$distro" == "Mint" ]] || \
 	 [[ "$distro" == "Pop_OS" ]]; then
 		alias install='sudo apt-get install'

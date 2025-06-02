@@ -1,10 +1,16 @@
 
 # ENVIRONMENT VARIABLES ==================================================
 
+# custom scripts
+export PATH="$HOME/.scripts:$PATH"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/opt:$PATH"
+
+# docker -> podman
+export DOCKER_HOST="unix:///run/user/1000/podman/podman.sock"
 
 export VDPAU_DRIVER='nvidia'
 
@@ -20,8 +26,8 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
 # Dumb CUDA stuff
-export PATH="$PATH:/usr/local/cuda-11.3/bin"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda-11.3/lib64"
+export PATH="$PATH:/opt/cuda/bin"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/cuda/lib64"
 
 # npm global path
 export PATH="$HOME/.npm-global/bin:$PATH"
