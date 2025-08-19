@@ -44,11 +44,22 @@
       create: true
       path: hyprland/waybar
 
+    # mpv config
+    ~/.config/mpv:
+      create: true
+      path: mpv
+
     # ghostty
     ~/.config/ghostty/:
       glob: true
       create: true
       path: ghostty/*
+
+    #rofi
+    ~/.config/rofi/:
+      glob: true
+      create: true
+      path: rofi/*
 
     # yazi
     ~/.config/yazi/:
