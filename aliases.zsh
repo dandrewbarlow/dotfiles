@@ -90,6 +90,7 @@ alias re="source $HOME/.zshrc"
 
 # may cause confusion at some point, but think I'm gonna try to make the switch
 alias docker="podman"
+alias docker-compose="podman-compose"
 
 # OS SPECIFIC
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
