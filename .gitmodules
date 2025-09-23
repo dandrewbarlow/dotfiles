@@ -1,23 +1,6 @@
-[submodule "dotbot"]
-	path = dotbot
-	url = https://github.com/anishathalye/dotbot
-	ignore = dirty
-	shallow = true
-[submodule "kitty"]
-	path = kitty
-	url = https://github.com/dracula/kitty.git
-	shallow = true
-[submodule "scripts/gitignore"]
-	path = scripts/gitignore
-	url = https://github.com/github/gitignore
-	shallow = true
 [submodule "spaceship-prompt"]
 	path = spaceship-prompt
 	url = https://github.com/spaceship-prompt/spaceship-prompt
-	shallow = true
-[submodule "scripts/reference"]
-	path = scripts/reference
-	url = https://github.com/Randy8080/reference
 	shallow = true
 [submodule "zsh_plugins/zsh-autosuggestions"]
 	path = zsh_plugins/zsh-autosuggestions
@@ -31,9 +14,6 @@
 	path = cowsay-files
 	url = https://github.com/paulkaefer/cowsay-files
 	shallow = true
-[submodule "rofi/rofi-themes-collection"]
-	path = rofi/rofi-themes-collection
-	url = https://github.com/newmanls/rofi-themes-collection.git
 [submodule "zsh/zsh-syntax-highlighting"]
 	path = zsh_plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
@@ -41,7 +21,7 @@
 	path = zsh_plugins/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab
 [submodule "nvim"]
-	path = nvim
+	path = .config/nvim
 	url = https://github.com/dandrewbarlow/nvim
 [submodule "yazi/flavors"]
 	path = yazi/flavors
