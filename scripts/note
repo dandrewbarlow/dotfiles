@@ -1,0 +1,25 @@
+#! /usr/bin/env bash
+
+notes_dir="$HOME/notes"
+
+year="$(date +%Y)"
+month="$(date +%m)"
+dst_dir="$year/$month"
+day="$(date +%d)"
+
+read -p "Enter file tag: " filetag
+
+dst_filename="$month-$day-$year-$filetag.md"
+dst_filepath="$notes_dir/$dst_dir/$dst_filename"
+
+mkdir -p "$notes_dir/$dst_dir"
+touch "$dst_filepath"
+
+header="# $month/$day/$year $filetag"
+
+echo "$header" > "$dst_filepath"
+echo "" >> "$dst_filepath"
+echo "" >> "$dst_filepath"
+
+
+nvim "$dst_filepath"
