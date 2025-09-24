@@ -1,20 +1,20 @@
 [submodule "zsh_plugins/zsh-autosuggestions"]
-	path = .oh-my-zsh/custom/plugins/zsh-autosuggestions
+	path = dot-oh-my-zsh/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
 	shallow = true
 [submodule "zsh_plugins/fzf-zsh-plugin"]
-	path = .oh-my-zsh/custom/plugins/fzf-zsh-plugin
+	path = dot-oh-my-zsh/custom/plugins/fzf-zsh-plugin
 	url = https://github.com/unixorn/fzf-zsh-plugin
 	shallow = true
 [submodule "zsh/zsh-syntax-highlighting"]
-	path = .oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+	path = dot-oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "zsh_plugins/fzf-tab"]
-	path = .oh-my-zsh/custom/plugins/fzf-tab
+	path = dot-oh-my-zsh/custom/plugins/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab
 [submodule "nvim"]
-	path = .config/nvim
+	path = dot-config/nvim
 	url = https://github.com/dandrewbarlow/nvim
 [submodule "yazi/flavors"]
-	path = .config/yazi/flavors
+	path = dot-config/yazi/flavors
 	url = https://github.com/yazi-rs/flavors
