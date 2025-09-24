@@ -39,6 +39,8 @@ alias coding="cd $HOME/Dropbox/coding/"
 
 alias c='code'
 
+alias lg='lazygit'
+
 alias htop='sudo htop'
 
 alias py='python3'
