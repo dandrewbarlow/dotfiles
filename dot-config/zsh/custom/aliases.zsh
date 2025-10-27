@@ -14,14 +14,16 @@
 alias sudo='sudo '
 
 # use eza w/ icons to list dir contents
-if [ ! -z "$(which eza)" ]; then
+if [ ! command -v eza >/dev/null 2>&1 ]; then
 	alias ls='eza --icons --color=always'
 fi
 
 # gotta have my neovim
-alias vim='nvim'
-alias vi='nvim'
-alias v='nvim'
+if [ ! command -v nvim >/dev/null 2>&1 ]; then
+	alias vim='nvim'
+	alias vi='nvim'
+	alias v='nvim'
+fi
 
 # emacs shortcuts
 alias emacs="emacsclient -c -a 'emacs'"
@@ -40,6 +42,7 @@ alias coding="cd $HOME/Dropbox/coding/"
 alias c='code'
 
 alias lg='lazygit'
+alias ld='lazydocker'
 
 alias htop='sudo htop'
 
