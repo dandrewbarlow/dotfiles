@@ -6,3 +6,6 @@
 
 Uses GNU `stow` to set up, uses [`oh-my-tmux`](https://github.com/gpakosz/.tmux) config file. Both are git submodules
 
+## Usage
+
+stow command is `stow . --dotfiles`

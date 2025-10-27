@@ -2,5 +2,5 @@
 \.gitignore
 \.gitmodules
 
-^\README.*
+README.md
 package-lists
