@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+# find a note with fzf
+
+notes_dir="$HOME/notes"
+
+file="$(fd ".md" --base-directory "$notes_dir" -d 3 | xargs -I {} basename {} | fzf +m)"
+
+file_location="$(fd "$file" -a --base-directory "$notes_dir")"
+
+if [ -f "$file_location" ]; then
+	nvim "$file_location"
+fi
