@@ -14,12 +14,12 @@
 alias sudo='sudo '
 
 # use eza w/ icons to list dir contents
-if [ ! command -v eza >/dev/null 2>&1 ]; then
+if command -v eza >/dev/null 2>&1; then
 	alias ls='eza --icons --color=always'
 fi
 
 # gotta have my neovim
-if [ ! command -v nvim >/dev/null 2>&1 ]; then
+if command -v nvim >/dev/null 2>&1; then
 	alias vim='nvim'
 	alias vi='nvim'
 	alias v='nvim'
@@ -36,8 +36,6 @@ alias ghci='stack ghci'
 alias ghc='stack ghc'
 
 alias popular="history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] \" \" CMD[a]/count*100 \"% \" a;}' | grep -v \"./\" | column -c3 -s \" \" -t | sort -nr | nl |  head -n10"
-
-alias coding="cd $HOME/Dropbox/coding/"
 
 alias c='code'
 
