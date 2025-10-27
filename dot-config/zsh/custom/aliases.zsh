@@ -92,8 +92,10 @@ alias radio="$HOME/scripts/radio/radio.py"
 alias re="source $HOME/.zshrc"
 
 # may cause confusion at some point, but think I'm gonna try to make the switch
-alias docker="podman"
-alias docker-compose="podman-compose"
+if command -v podman >/dev/null 2>&1; then
+	alias docker="podman"
+	alias docker-compose="podman-compose"
+fi
 
 # OS SPECIFIC
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
