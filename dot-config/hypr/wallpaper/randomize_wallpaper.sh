@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# https://wiki.hypr.land/Hypr-Ecosystem/hyprpaper/
 
 WALLPAPER_DIR="$HOME/Sync/Wallpapers/"
 
