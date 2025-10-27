@@ -42,7 +42,9 @@ alias c='code'
 alias lg='lazygit'
 alias ld='lazydocker'
 
-alias htop='sudo htop'
+if [ "$EUID" -ne 0 ]; then
+	alias htop='sudo htop'
+fi
 
 alias py='python3'
 
@@ -64,10 +66,12 @@ alias pmv='rsync --info=progress2 --remove-source-files -a'
 # alias ssh="kitty +kitten ssh"
 
 # Conda shortcuts for ease of use
-alias ca='conda activate'
-alias cl='conda env list'
-alias cde='conda deactivate'
-alias condapip="$HOME/$CONDA_PREFIX/$CONDA_DEFAULT_ENV/bin/pip"
+if command -v conda >/dev/null 2>&1; then
+	alias ca='conda activate'
+	alias cl='conda env list'
+	alias cde='conda deactivate'
+	alias condapip="$HOME/$CONDA_PREFIX/$CONDA_DEFAULT_ENV/bin/pip"
+fi
 
 # Pure Data
 alias pd='/usr/local/lib/pd-0.51-3/bin/pd-gui'

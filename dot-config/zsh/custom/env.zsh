@@ -10,12 +10,14 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/opt:$PATH"
 
 # docker -> podman
-export DOCKER_HOST="unix:///run/user/1000/podman/podman.sock"
+if command -v podman >/dev/null 2>&1; then
+  export DOCKER_HOST="unix:///run/user/1000/podman/podman.sock"
+fi
 
 export VDPAU_DRIVER='nvidia'
 
 # man pages in bat
-if [ ! -z "$(which bat)" ]; then
+if command -v bat >/dev/null 2>&1; then
   export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 fi
 
@@ -56,7 +58,9 @@ export COWPATH="$COWPATH:$HOME/.dotfiles/cowsay-files/cows"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
-export EDITOR='nvim'
+if command -v nvim >/dev/null 2>&1; then
+  export EDITOR='nvim'
+fi
 
 export DOOMDIR="$HOME/.config/doom/"
 
