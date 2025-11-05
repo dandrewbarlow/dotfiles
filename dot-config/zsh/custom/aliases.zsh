@@ -99,6 +99,9 @@ alias re="source $HOME/.zshrc"
 if command -v podman >/dev/null 2>&1; then
 	alias docker="podman"
 	alias docker-compose="podman-compose"
+else
+	alias doco="docker compose"
+	alias docu="docker compose up -d"
 fi
 
 # OS SPECIFIC
