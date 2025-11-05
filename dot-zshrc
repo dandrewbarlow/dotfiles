@@ -1,3 +1,8 @@
+# Test shell performance
+# zmodload zsh/prof
+
+source <fzf --zsh)
+
 # LOAD EXTERNAL =======================================================
 # lets me separate logic
 
@@ -21,3 +26,5 @@ fi
 
 [ -f "$HOME/.scripts/terminal_startup.sh" ] && "$HOME/.scripts/terminal_startup.sh"
 
+# check shell performance
+# zprof
