@@ -1,7 +1,7 @@
 # Test shell performance
 # zmodload zsh/prof
 
-source <fzf --zsh)
+source <(fzf --zsh)
 
 # LOAD EXTERNAL =======================================================
 # lets me separate logic
