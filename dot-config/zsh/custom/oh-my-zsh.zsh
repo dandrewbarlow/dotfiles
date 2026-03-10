@@ -66,7 +66,6 @@ plugins=(
 	copypath
 	cp
 	fzf-tab
-	fzf-zsh-plugin
 	git
 	gitignore
 	web-search
