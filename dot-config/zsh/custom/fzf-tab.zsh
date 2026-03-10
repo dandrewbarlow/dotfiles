@@ -12,7 +12,7 @@
 # preview file contents
 # https://github.com/Aloxaf/fzf-tab/wiki/Preview
 zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
-export LESSOPEN='|~/.dotfiles/zsh/lessfilter.sh %s'
+export LESSOPEN='|~/.config/zsh/custom/lessfilter.sh %s'
 
 zstyle ':fzf-tab:complete:ls:*' fzf-preview 'eza --color=always -icons $realpath'
 

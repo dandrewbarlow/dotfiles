@@ -6,6 +6,11 @@
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+# load helper file
+source "$HOME/.config/zsh/custom/helper.zsh"
+# functions:
+# program_is_installed() - check if program is installed
+# path_add() - add new path if not exists
 
 # this one requires some explanation:
 # shell only checks the first word for aliases,
@@ -14,40 +19,50 @@
 alias sudo='sudo '
 
 # use eza w/ icons to list dir contents
-if command -v eza >/dev/null 2>&1; then
+if program_is_installed eza; then
 	alias ls='eza --icons --color=always'
 fi
 
 # gotta have my neovim
-if command -v nvim >/dev/null 2>&1; then
+if program_is_installed nvim; then
 	alias vim='nvim'
 	alias vi='nvim'
 	alias v='nvim'
 fi
 
+if program_is_installed claude; then
+	alias cc='claude'
+fi
 # emacs shortcuts
 alias emacs="emacsclient -c -a 'emacs'"
 alias e="emacsclient -c -a 'emacs'"
 
 # annoying to type out
 alias sys='systemctl'
+alias jc='journalctl'
 
+# haskell
 alias ghci='stack ghci'
 alias ghc='stack ghc'
 
+
 alias popular="history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] \" \" CMD[a]/count*100 \"% \" a;}' | grep -v \"./\" | column -c3 -s \" \" -t | sort -nr | nl |  head -n10"
 
+# vscode
 alias c='code'
 
+# lazy tui's
 alias lg='lazygit'
 alias ld='lazydocker'
 
+# if not root, auto request root privileges for htop
 if [ "$EUID" -ne 0 ]; then
 	alias htop='sudo htop'
 fi
 
 alias py='python3'
 
+# minimal pdf viewer
 alias z='zathura'
 
 # edit todo file
@@ -57,27 +72,13 @@ alias todo="nvim $HOME/TODO.md"
 alias lss='du -sh -- */ | sort -h'
 
 # alternative move command that shows progress
-# useful for large files being moved between file systems
+# useful for large files being moved between drives/computers
 # unuseful for renames/moving within the same file system 
 # bc it operates like a copy command, just destroys original
 alias pmv='rsync --info=progress2 --remove-source-files -a'
 
 # necessary for kitty to properly ssh
 # alias ssh="kitty +kitten ssh"
-
-# Conda shortcuts for ease of use
-if command -v conda >/dev/null 2>&1; then
-	alias ca='conda activate'
-	alias cl='conda env list'
-	alias cde='conda deactivate'
-	alias condapip="$HOME/$CONDA_PREFIX/$CONDA_DEFAULT_ENV/bin/pip"
-fi
-
-# Pure Data
-alias pd='/usr/local/lib/pd-0.51-3/bin/pd-gui'
-
-# common command in AI art scripts
-alias pygen='python3 generate.py'
 
 # cool ones from reddit, haha
 # https://old.reddit.com/r/linuxquestions/comments/13c6r2j/favorite_aliases/
@@ -87,6 +88,7 @@ alias new="/usr/bin/ls -lth | head -15"
 
 # stop music from playing
 alias shh="pkill mpv; pkill mpv"
+
 # play drum&bass internet radio
 alias dnb="shh; mpv --really-quiet https://dnbradio.com/hi.pls &"
 
