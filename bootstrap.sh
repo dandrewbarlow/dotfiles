@@ -207,8 +207,27 @@ section_omz() {
 }
 
 section_stow() {
+	# A fresh machine often already has real files where stow wants to place
+	# symlinks (e.g. a default ~/.zshrc from the distro or zsh-newuser-install).
+	# Detect those via a dry run and back them up rather than failing or using
+	# --adopt (which would pull the stray file's contents into the repo).
+	local conflicts backup_dir="" f
+	conflicts=$(stow -n --dotfiles . 2>&1 |
+		sed -n 's/.*existing target \(.*\) since.*/\1/p' | sort -u || true)
+
+	if [ -n "$conflicts" ]; then
+		backup_dir="$HOME/.dotfiles-backup/$(date +%Y%m%d-%H%M%S)"
+		warn "Backing up pre-existing files that conflict with stow:"
+		while IFS= read -r f; do
+			[ -e "$HOME/$f" ] || continue
+			mkdir -p "$backup_dir/$(dirname "$f")"
+			mv "$HOME/$f" "$backup_dir/$f"
+			info "  ~/$f -> $backup_dir/$f"
+		done <<<"$conflicts"
+	fi
+
 	stow . --dotfiles
-	ok "Dotfiles stowed"
+	ok "Dotfiles stowed${backup_dir:+ (backups in $backup_dir)}"
 }
 
 section_packages() {
