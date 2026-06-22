@@ -127,10 +127,14 @@ ensure_local_repo() {
 # ---------------------------------------------------------------------------
 declare -A ARCH_MAP=(
 	[python3]=python
+	[node]=nodejs         # Arch ships node as `nodejs`
 )
 
 declare -A DEBIAN_MAP=(
 	[python3]=python3
+	[go]=golang           # Debian package is `golang` (metapackage)
+	[node]=nodejs         # Debian package is `nodejs`
+	[firefox]=firefox-esr # Debian ships firefox-esr; plain `firefox` has no candidate
 	[fd]=fd-find          # binary is `fdfind`
 	[youtube-dl]=yt-dlp   # youtube-dl is effectively dead
 	[neofetch]=fastfetch  # neofetch is unmaintained / dropped
@@ -165,7 +169,14 @@ pkg_install() {
 		fi
 		;;
 	debian)
-		sudo apt-get install -y "$@"
+		# apt aborts the whole batch if any one name is unknown, so drop
+		# packages with no install candidate (warning) rather than failing all.
+		local avail=() missing=() p
+		for p in "$@"; do
+			if apt-cache show "$p" >/dev/null 2>&1; then avail+=("$p"); else missing+=("$p"); fi
+		done
+		[ "${#missing[@]}" -gt 0 ] && warn "No apt candidate, skipping: ${missing[*]}"
+		[ "${#avail[@]}" -gt 0 ] && sudo apt-get install -y "${avail[@]}"
 		;;
 	esac
 }
