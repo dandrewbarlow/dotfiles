@@ -75,6 +75,11 @@ plugins=(
 
 source $HOME/.config/zsh/custom/fzf-tab.zsh
 
+# Prompt theme must be chosen BEFORE oh-my-zsh.sh loads it. Fall back to the
+# (vendored) spaceship theme when starship isn't installed; when it is, .zshrc
+# evals `starship init` after this to override the prompt.
+program_is_installed starship || ZSH_THEME="spaceship"
+
 source $ZSH/oh-my-zsh.sh
 
 # fzf key bindings must load after oh-my-zsh, which overwrites ^R with
