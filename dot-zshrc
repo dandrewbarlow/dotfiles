@@ -15,8 +15,7 @@ unset conf
 # just gives a lil bit of life to the terminal
 
 # if starship is installed, use that as theme instead of spaceship (faster)
-if [ ! -z "$(which starship)" ] 
-then
+if program_is_installed starship; then
 	eval "$(starship init zsh)"
 else
 	ZSH_THEME="spaceship"
