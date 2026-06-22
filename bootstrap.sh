@@ -203,7 +203,7 @@ section_omz() {
 	# KEEP_ZSHRC : don't touch ~/.zshrc — we stow our own
 	RUNZSH=no CHSH=no KEEP_ZSHRC=yes \
 		sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-	ok "oh-my-zsh installed (set zsh as default shell with: chsh -s \"\$(command -v zsh)\")"
+	ok "oh-my-zsh installed"
 }
 
 section_stow() {
@@ -228,6 +228,30 @@ section_stow() {
 
 	stow . --dotfiles
 	ok "Dotfiles stowed${backup_dir:+ (backups in $backup_dir)}"
+}
+
+section_shell() {
+	local user="${USER:-$(id -un)}" zsh_path current
+	zsh_path="$(command -v zsh || true)"
+	[ -n "$zsh_path" ] || { warn "zsh not installed; cannot set default shell"; return 0; }
+
+	current="$(getent passwd "$user" 2>/dev/null | cut -d: -f7)"
+	if [ "$current" = "$zsh_path" ]; then
+		info "Default shell already zsh ($zsh_path)"
+		return 0
+	fi
+
+	# chsh only accepts shells listed in /etc/shells.
+	if ! grep -qxF "$zsh_path" /etc/shells 2>/dev/null; then
+		info "Registering $zsh_path in /etc/shells"
+		echo "$zsh_path" | sudo tee -a /etc/shells >/dev/null
+	fi
+
+	if sudo chsh -s "$zsh_path" "$user"; then
+		ok "Default shell set to zsh — log out and back in for it to take effect"
+	else
+		warn "Could not change shell automatically; run: chsh -s \"$zsh_path\""
+	fi
 }
 
 section_packages() {
@@ -303,6 +327,7 @@ SECTIONS=(
 	"submodules|section_submodules|Init/update git submodules (nvim, zsh plugins, yazi flavors)"
 	"omz|section_omz|Install oh-my-zsh framework (required for your zsh config)"
 	"stow|section_stow|Symlink dotfiles with stow"
+	"shell|section_shell|Set zsh as the default login shell"
 	"packages|section_packages|Install system packages from packages.conf"
 	"flatpak|section_flatpak|Install flatpaks from flatpak.txt"
 	"vscode|section_vscode|Install VS Code extensions"
