@@ -187,6 +187,25 @@ section_submodules() {
 	ok "Submodules ready"
 }
 
+section_omz() {
+	# The repo only stows ~/.oh-my-zsh/custom; the oh-my-zsh framework itself
+	# must exist for .zshrc to work. Install it BEFORE stow, otherwise stow
+	# folds ~/.oh-my-zsh into a symlink and the OMZ installer refuses to run.
+	if [ -f "$HOME/.oh-my-zsh/oh-my-zsh.sh" ]; then
+		info "oh-my-zsh already installed"
+		return 0
+	fi
+	# Installer requires zsh + git; curl fetches it.
+	pkg_install zsh git curl
+	info "Installing oh-my-zsh (unattended)..."
+	# RUNZSH=no  : don't drop into zsh when done
+	# CHSH=no    : don't change the login shell (avoids an interactive prompt)
+	# KEEP_ZSHRC : don't touch ~/.zshrc — we stow our own
+	RUNZSH=no CHSH=no KEEP_ZSHRC=yes \
+		sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+	ok "oh-my-zsh installed (set zsh as default shell with: chsh -s \"\$(command -v zsh)\")"
+}
+
 section_stow() {
 	stow . --dotfiles
 	ok "Dotfiles stowed"
@@ -263,6 +282,7 @@ section_vscode() {
 SECTIONS=(
 	"prereqs|section_prereqs|Install prerequisites (git, stow)"
 	"submodules|section_submodules|Init/update git submodules (nvim, zsh plugins, yazi flavors)"
+	"omz|section_omz|Install oh-my-zsh framework (required for your zsh config)"
 	"stow|section_stow|Symlink dotfiles with stow"
 	"packages|section_packages|Install system packages from packages.conf"
 	"flatpak|section_flatpak|Install flatpaks from flatpak.txt"
