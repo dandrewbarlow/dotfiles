@@ -54,6 +54,8 @@ if program_is_installed podman; then
   export DOCKER_HOST="unix:///run/user/1000/podman/podman.sock"
 fi
 
+export less="-R"
+
 # man pages in bat
 if program_is_installed bat; then
   export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"

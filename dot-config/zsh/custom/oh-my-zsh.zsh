@@ -77,6 +77,10 @@ source $HOME/.config/zsh/custom/fzf-tab.zsh
 
 source $ZSH/oh-my-zsh.sh
 
+# fzf key bindings must load after oh-my-zsh, which overwrites ^R with
+# history-incremental-search-backward via lib/key-bindings.zsh
+source <(fzf --zsh)
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
