@@ -36,6 +36,25 @@ function cdtmp {
   cd "$TMP"
 }
 
+# Find functions: some commands to make finding files less verbose
+#
+# --- fd with graceful fallback ---------------------------------
+# Debian/Ubuntu ship fd as 'fdfind' (name clash), so alias it back.
+command -v fdfind >/dev/null 2>&1 && alias fd='fdfind'
+
+# Only define a fallback when neither fd nor fdfind exists.
+if ! command -v fd >/dev/null 2>&1 && ! command -v fdfind >/dev/null 2>&1; then
+  fd() { find "${2:-.}" -iname "*$1*" 2>/dev/null; }
+fi
+
+# --- focused helpers (work everywhere, even busybox) -----------
+ff()   { find "${2:-.}" -iname "*$1*"          2>/dev/null; }  # any name match
+ffd()  { find "${2:-.}" -type d -iname "*$1*"  2>/dev/null; }  # directories only
+fff()  { find "${2:-.}" -type f -iname "*$1*"  2>/dev/null; }  # files only
+fe()   { find "${2:-.}" -type f -iname "*.$1"  2>/dev/null; }  # by extension
+fnew() { find "${2:-.}" -type f -mtime -"${1:-1}" 2>/dev/null; } # modified in last N days
+
+
 # Distro specific helper functions
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
