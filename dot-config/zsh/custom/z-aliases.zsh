@@ -30,6 +30,10 @@ if program_is_installed nvim; then
 	alias v='nvim'
 fi
 
+if program_is_installed herdr; then
+	alias h='herdr'
+fi
+
 if program_is_installed claude; then
 	alias cc='claude'
 fi
@@ -62,8 +66,10 @@ fi
 
 alias py='python3'
 
-# minimal pdf viewer
-alias z='zathura'
+# zoxide / cd replacement
+# NOTE: do NOT alias `z` here. `zoxide init zsh` (run from .zshrc, after
+# oh-my-zsh's compinit) defines `z` and `zi` as functions, and an alias of the
+# same name would be expanded first and shadow them.
 
 # edit todo file
 alias todo="nvim $HOME/TODO.md"
