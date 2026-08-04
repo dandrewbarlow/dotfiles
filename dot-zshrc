@@ -21,6 +21,10 @@ if program_is_installed starship; then
 	eval "$(starship init zsh)"
 fi
 
+if program_is_installed zoxide; then
+  eval "$(zoxide init zsh)"
+fi
+
 [ -f "$HOME/.scripts/terminal_startup.sh" ] && "$HOME/.scripts/terminal_startup.sh"
 
 # check shell performance
