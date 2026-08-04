@@ -1,0 +1,26 @@
+# Starship prompt config -> ~/.config/starship.toml
+#
+# Only the keys set here override starship's built-in defaults; every module
+# not mentioned keeps its stock behaviour, so this file can stay minimal.
+# Reference: https://starship.rs/config/
+
+[directory]
+# Show the full path instead of the last few components.
+#
+# Two defaults have to be turned off to get this:
+#   truncation_length = 3    -> keeps only the last 3 components
+#   truncate_to_repo  = true -> inside a git repo, hides everything above the
+#                               repo root (e.g. ~/.dotfiles/dot-config/zsh
+#                               renders as just "dot-config/zsh")
+# Jumping around with zoxide lands you in arbitrary deep dirs, so the extra
+# context is worth the prompt width.
+truncation_length = 0
+truncate_to_repo = false
+
+# Shown in place of the truncated prefix. Empty since nothing is truncated now,
+# but set explicitly so it stays sane if truncation_length is ever raised.
+truncation_symbol = ""
+
+# $HOME still collapses to "~" -- that substitution is independent of the
+# truncation settings above. Set home_symbol to change it.
+# home_symbol = "~"
