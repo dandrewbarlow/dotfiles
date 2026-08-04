@@ -14,7 +14,7 @@
 zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
 export LESSOPEN='|~/.config/zsh/custom/lessfilter.sh %s'
 
-zstyle ':fzf-tab:complete:ls:*' fzf-preview 'eza --color=always -icons $realpath'
+zstyle ':fzf-tab:complete:ls:*' fzf-preview 'eza --color=always --icons=always ${(Q)realpath}'
 
 # git completion
 # it is an example. you can change it
