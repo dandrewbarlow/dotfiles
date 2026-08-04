@@ -31,6 +31,9 @@ path_add "/opt/processing"
 # Go binaries
 path_add "$HOME/go/bin"
 
+# Common Lisp (roswell)
+path_add "$HOME/.roswell/bin"
+
 # Ruby
 path_add "$HOME/.rbenv/bin"
 [ ! "$(type rbenv)" = "rbenv not found" ] && eval "$(rbenv init -)"
