@@ -136,6 +136,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	 [[ "$distro" == "Pop_OS" ]]; then
 		alias install='sudo apt-get install'
 		alias update='sudo apt-get update && sudo apt-get upgrade'
+		alias search='apt search'
 	elif [[ "$distro" == "SteamOS" ]]; then
 	    alias install='brew install'
 	    alias search='brew search'
