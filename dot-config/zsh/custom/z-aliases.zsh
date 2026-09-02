@@ -160,3 +160,4 @@ alias pman="$HOME/.scripts/pman.sh"
 alias blender="$HOME/.scripts/start_blender_with_cuda.sh"
 alias readpdf="$HOME/.scripts/readpdf.sh"
 
+alias b="$HOME/.scripts/bookmarks-menu/bookmarks-menu.sh -t"
