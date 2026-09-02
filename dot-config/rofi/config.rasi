@@ -13,6 +13,9 @@ configuration {
     kb-cancel: "Control+d,Escape";
 }
 
-// theme import
+// import themes
 @import "themes/dracula"
-@theme "themes/dracula"
+@import "themes/squared"
+
+// set default theme
+@theme "themes/squared"

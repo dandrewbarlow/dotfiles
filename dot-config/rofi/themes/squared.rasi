@@ -2,7 +2,8 @@
 /* Author: Newman Sanchez (https://github.com/newmanls) */
 
 * {
-    font:   "FiraCode Nerd Font Medium 12";
+    // font:   "FiraCode Nerd Font Bold 12";
+    font:   "JetBrainsMono Nerd Font ExtraBold 12";
 
     bg0:     #2E3440;
     bg1:     #3B4252;
@@ -21,7 +22,8 @@
 
 window {
     location:   center;
-    width:      480;
+    width:      960;
+    height:	640;
 
     background-color:   @bg0;
 }
@@ -47,7 +49,7 @@ textbox {
 }
 
 listview {
-    padding:    4px 0;
+    padding:    1px 0;
     lines:      8;
     columns:    1;
 
@@ -88,7 +90,7 @@ element selected urgent {
 }
 
 element-icon {
-    size:   0.8em;
+    size:   2em;
 }
 
 element-text {
