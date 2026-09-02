@@ -21,3 +21,6 @@
 [submodule "dot-scripts/nerd-font-downloader"]
 	path = dot-scripts/nerd-font-downloader
 	url = https://github.com/dandrewbarlow/nerd-font-downloader
+[submodule "dot-scripts/bookmarks-menu"]
+	path = dot-scripts/bookmarks-menu
+	url = https://github.com/dandrewbarlow/bookmarks-menu
