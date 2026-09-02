@@ -1,6 +1,18 @@
 configuration {
+    /* Keyboard Shortcuts */
 
+    // need to remove conflicting bindings
+    kb-remove-to-eol: "";
+    kb-accept-entry: "Return";
+    kb-remove-char-forward: "Delete";
+
+    // for my glorious vim binds
+    kb-row-up: "Control+k";
+    kb-row-down: "Control+j";
+
+    kb-cancel: "Control+d,Escape";
 }
 
-@import "dracula"
-@theme "dracula"
+// theme import
+@import "themes/dracula"
+@theme "themes/dracula"
