@@ -134,9 +134,15 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	 [[ "$distro" == "Debian GNU/Linux" ]] || \
 	 [[ "$distro" == "Mint" ]] || \
 	 [[ "$distro" == "Pop_OS" ]]; then
-		alias install='sudo apt-get install'
-		alias update='sudo apt-get update && sudo apt-get upgrade'
-		alias search='apt search'
+		if program_is_installed nala; then
+			alias install='sudo nala install'
+			alias update='sudo nala update'
+			alias search='nala search'
+		else
+			alias install='sudo apt-get install'
+			alias update='sudo apt-get update && sudo apt-get upgrade'
+			alias search='apt search'
+		fi
 	elif [[ "$distro" == "SteamOS" ]]; then
 	    alias install='brew install'
 	    alias search='brew search'
