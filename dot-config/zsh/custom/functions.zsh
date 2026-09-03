@@ -40,11 +40,16 @@ function cdtmp {
 #
 # --- fd with graceful fallback ---------------------------------
 # Debian/Ubuntu ship fd as 'fdfind' (name clash), so alias it back.
-command -v fdfind >/dev/null 2>&1 && alias fd='fdfind'
-
-# Only define a fallback when neither fd nor fdfind exists.
-if ! command -v fd >/dev/null 2>&1 && ! command -v fdfind >/dev/null 2>&1; then
-  fd() { find "${2:-.}" -iname "*$1*" 2>/dev/null; }
+# Note: the function name is quoted so zsh does not alias-expand it at
+# parse time ("defining function based on alias `fd'") once the alias below
+# has been defined.
+if command -v fd >/dev/null 2>&1; then
+  : # real fd, nothing to do
+elif command -v fdfind >/dev/null 2>&1; then
+  alias fd='fdfind'
+else
+  unalias fd 2>/dev/null   # an alias would shadow the fallback function
+  'fd'() { find "${2:-.}" -iname "*$1*" 2>/dev/null; }
 fi
 
 # --- focused helpers (work everywhere, even busybox) -----------
