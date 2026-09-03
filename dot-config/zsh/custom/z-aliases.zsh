@@ -120,6 +120,7 @@ updot() {
 
 	echo "Updating submodules"
 	git submodule update --init --recursive
+	cd -
 }
 
 # OS SPECIFIC
