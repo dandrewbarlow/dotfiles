@@ -114,13 +114,13 @@ fi
 
 # update dotfiles repo
 updot() {
-	cd "$HOME/.dotfiles"
+	pushd "$HOME/.dotfiles"
 	echo "Updating dotfiles"
 	git pull
 
 	echo "Updating submodules"
 	git submodule update --init --recursive
-	cd -
+	popd
 }
 
 # OS SPECIFIC
