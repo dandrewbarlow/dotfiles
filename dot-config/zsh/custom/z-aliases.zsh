@@ -112,6 +112,16 @@ else
 	alias docu="docker compose up -d"
 fi
 
+# update dotfiles repo
+updot() {
+	cd "$HOME/.dotfiles"
+	echo "Updating dotfiles"
+	git pull
+
+	echo "Updating submodules"
+	git submodule update --init --recursive
+}
+
 # OS SPECIFIC
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	
