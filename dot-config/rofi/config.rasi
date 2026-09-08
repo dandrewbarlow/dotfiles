@@ -11,11 +11,19 @@ configuration {
     kb-row-down: "Control+j";
 
     kb-cancel: "Control+d,Escape";
+
+    show-icons: true;
+    display-drun: "";
+    // matching: "fuzzy";
+    sort: true;
+    tokenize: true;
+    icon-theme: "Papirus";
 }
 
 // import themes
-@import "themes/dracula"
+// @import "themes/dracula"
 @import "themes/squared"
+@import "themes/custom"
 
 // set default theme
-@theme "themes/squared"
+@theme "themes/custom"

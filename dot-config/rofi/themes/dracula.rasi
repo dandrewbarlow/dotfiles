@@ -1,14 +1,6 @@
 // dracula theme
 // https://github.com/dracula/rofi/blob/main/theme/config1.rasi
 
-configuration {
-    show-icons: true;
-    display-drun: "";
-    // matching: "fuzzy";
-    sort: true;
-    tokenize: true;
-    icon-theme: "Papirus";
-}
 
 * {
     font: "Helvetica Neue LT 20";

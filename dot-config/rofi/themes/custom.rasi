@@ -1,0 +1,160 @@
+/* ROFI CUSTOM THEME
+ *
+ * Structure inherited from squared (Newman Sanchez), rebuilt on the Dracula
+ * palette to match kitty. Sharp outer frame, rounded selection pill.
+ *
+ * Sized font-relative rather than in pixels, so the launcher holds its
+ * proportions across the mixed display scaling in kwinoutputconfig.json and
+ * follows the font if its size ever changes.
+ *
+ * rofi's units: 1em is the rendered TEXT HEIGHT (not the typographic em
+ * square) and 1ch is one digit's width. For this font at 12pt that is 27px
+ * and 12px respectively on this display.
+ *
+ * Everything is on a 0.4em rhythm. Prompt text and row text both start 0.8em
+ * from the frame: the inputbar gets 0.8em of padding, while rows get 0.4em of
+ * margin (so the pill floats clear of the edge) plus 0.4em of padding.
+ */
+
+configuration {
+    /* Self-contained: squared relied on dracula.rasi being imported alongside
+       it to get these, which meant dropping that import silently killed icons. */
+    show-icons:             true;
+    icon-theme:             "Papirus";
+    display-drun:           "";
+    drun-display-format:    "{name}";
+    sort:                   true;
+    tokenize:               true;
+    hide-scrollbar:         true;
+}
+
+* {
+    font:   "JetBrainsMono Nerd Font 12";
+
+    /* dracula — identical to dot-config/kitty/dracula.conf */
+    bg0:     #282A36;   /* background     */
+    bg1:     #44475A;   /* current line   */
+    fg0:     #F8F8F2;   /* foreground     */
+    fg1:     #6272A4;   /* comment — placeholders, -mesg headers */
+
+    accent-color:     #BD93F9;   /* purple */
+    urgent-color:     #FFB86C;   /* orange */
+
+    background-color:   transparent;
+    text-color:         @fg0;
+
+    margin:     0;
+    padding:    0;
+    spacing:    0;
+}
+
+window {
+    location:   center;
+
+    /* 80 characters wide -- a text measure, not a pixel count, so bookmark
+       titles get consistent room whatever the display. Height is deliberately
+       unset: listview's `lines` drives it, which is font-relative already.
+       Setting both is what left empty space under short result sets. */
+    width:      80ch;
+
+    border-radius:      0;
+    background-color:   @bg0;
+}
+
+inputbar {
+    spacing:    0.4em;
+    padding:    0.8em;
+
+    background-color:   @bg1;
+}
+
+prompt, entry, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+prompt {
+    text-color: @accent-color;
+    font:       "JetBrainsMono Nerd Font Bold 12";
+}
+
+entry {
+    placeholder:        "Search";
+    placeholder-color:  @fg1;
+}
+
+/* bookmarks-menu.sh passes -mesg; squared had no rule for it at all */
+message {
+    padding:            0.4em 0.8em;
+    background-color:   @bg1;
+}
+
+/* message owns the padding and the band; textbox is just the text inside it,
+   so the two don't stack their padding. */
+textbox {
+    text-color:         @fg1;
+    background-color:   transparent;
+}
+
+listview {
+    padding:    0.4em 0;
+    lines:      8;
+    columns:    1;
+
+    /* Held at 8 rows so the window doesn't resize as you filter -- the same
+       visual stability the old fixed 640px height gave, now font-relative. */
+    fixed-height:   true;
+    scrollbar:      false;
+}
+
+/* The pill: inset 0.4em from the frame so the rounding reads as a shape
+   rather than a clipped corner. */
+element {
+    padding:        0.4em;
+    spacing:        0.4em;
+    margin:         0 0.4em;
+    border-radius:  0.4em;
+}
+
+element normal normal {
+    text-color: @fg0;
+}
+
+element normal urgent {
+    text-color: @urgent-color;
+}
+
+element normal active {
+    text-color: @accent-color;
+}
+
+element alternate normal {
+    text-color: @fg0;
+}
+
+element alternate urgent {
+    text-color: @urgent-color;
+}
+
+element alternate active {
+    text-color: @accent-color;
+}
+
+element selected {
+    text-color: @bg0;
+}
+
+element selected normal, element selected active {
+    background-color:   @accent-color;
+}
+
+element selected urgent {
+    background-color:   @urgent-color;
+}
+
+element-icon {
+    size:   2em;
+}
+
+element-text {
+    text-color: inherit;
+}
