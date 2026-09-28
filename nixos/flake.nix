@@ -15,7 +15,7 @@
     let
       # Every host = common base + one profile + its own hosts/<hostname>/
       # dir (hardware config, bootloader, anything machine-specific).
-      #   profile: "desktop"  - full Hyprland user environment
+      #   profile: "desktop"  - full KDE Plasma user environment
       #            "headless" - SSH-only dev/hosting box
       mkHost = { hostname, profile, system ? "x86_64-linux" }:
         nixpkgs.lib.nixosSystem {

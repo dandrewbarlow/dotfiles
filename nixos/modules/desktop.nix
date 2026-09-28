@@ -1,12 +1,14 @@
-# Profile: full graphical user environment (Hyprland, matching
-# dot-config/hypr + dot-config/waybar).
+# Profile: full graphical user environment (KDE Plasma 6).
 { config, pkgs, ... }:
 
 {
   users.users.andrew.extraGroups = [ "video" "audio" ];
 
-  programs.hyprland.enable = true;
-  xdg.portal.enable = true;
+  services.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
 
   services.pipewire = {
     enable = true;

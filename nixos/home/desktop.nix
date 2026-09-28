@@ -4,9 +4,6 @@
 
 {
   xdg.configFile = {
-    "hypr".source = link "dot-config/hypr";
-    "hyprland".source = link "dot-config/hyprland";
-    "waybar".source = link "dot-config/waybar";
     "kitty".source = link "dot-config/kitty";
     "mpv".source = link "dot-config/mpv";
     "rofi".source = link "dot-config/rofi";
@@ -37,7 +34,6 @@
     zathura
 
     # SYSTEM
-    kdePackages.dolphin # dolphin
     kitty
   ];
 }

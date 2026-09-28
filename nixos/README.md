@@ -10,7 +10,7 @@ duplicated here — home-manager symlinks them out-of-store from
 |------|---------|
 | `flake.nix` | `mkHost { hostname, profile }` + the list of hosts |
 | `modules/common.nix` | System config every host gets (user, zsh, locale, nix settings, firewall) |
-| `modules/desktop.nix` | Profile: Hyprland, pipewire, steam, GUI home config |
+| `modules/desktop.nix` | Profile: KDE Plasma 6 (SDDM), pipewire, steam, GUI home config |
 | `modules/headless.nix` | Profile: SSH-only dev/hosting box (openssh, podman) |
 | `home/common.nix` | home-manager for every profile: CLI packages, shell/terminal dotfiles |
 | `home/desktop.nix` | home-manager additions for the desktop profile: GUI apps + their dotfiles |
