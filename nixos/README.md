@@ -1,31 +1,36 @@
 # nixos/
 
-WIP NixOS + home-manager config for host `devarr`, developed inside the
-existing dotfiles repo. `dot-config/`, `dot-scripts/`, etc. are unaffected
-and still deployed the old way (`stow . --dotfiles`) until this is ready —
-see `home/modules/dotfiles-symlinks.nix` for how this flake reuses those
-same files rather than duplicating them.
+NixOS + home-manager flake. `dot-config/`, `dot-scripts/`, etc. are not
+duplicated here — home-manager symlinks them out-of-store from
+`~/.dotfiles`, so the repo must be cloned there.
 
-## Status
+## Layout
 
-Nothing here has been applied anywhere. `nix` isn't even installed on the
-current Debian machine, so this hasn't been built or evaluated yet —
-treat it as unverified until you run `nix flake check`.
+| Path | Purpose |
+|------|---------|
+| `flake.nix` | `mkHost { hostname, profile }` + the list of hosts |
+| `modules/common.nix` | System config every host gets (user, zsh, locale, nix settings, firewall) |
+| `modules/desktop.nix` | Profile: Hyprland, pipewire, steam, GUI home config |
+| `modules/headless.nix` | Profile: SSH-only dev/hosting box (openssh, podman) |
+| `home/common.nix` | home-manager for every profile: CLI packages, shell/terminal dotfiles |
+| `home/desktop.nix` | home-manager additions for the desktop profile: GUI apps + their dotfiles |
+| `hosts/<name>/` | Per-machine: `hardware-configuration.nix`, bootloader, `stateVersion` |
 
-`hosts/devarr/hardware-configuration.nix` is a placeholder. It must be
-replaced with the real output of `nixos-generate-config` before this
-config is ever installed/switched to.
+`desktop` and `headless` are generic starting-point hosts. Their
+`hardware-configuration.nix` files are **stubs** so the flake evaluates.
 
-## Trying it out without touching your current setup
+## Adding a machine
 
-- Syntax/eval check only: `nix flake check` (from inside `nixos/`)
-- Build without applying anything: `nixos-rebuild build --flake .#devarr`
-- Try it in a disposable VM: `nixos-rebuild build-vm --flake .#devarr`
-  then run the resulting `./result/bin/run-*-vm`
-- Actually switching your running system: `nixos-rebuild switch --flake .#devarr`
-  — don't run this until the config is finished and reviewed; it's the
-  only command in this list that changes anything live.
+1. `cp -r hosts/headless hosts/<name>` (or `hosts/desktop`)
+2. Add `<name> = mkHost { hostname = "<name>"; profile = "headless"; };`
+   to `nixosConfigurations` in `flake.nix`
+3. Replace `hosts/<name>/hardware-configuration.nix` with the output of
+   `nixos-generate-config --show-hardware-config` on that machine
+4. `git add` it — flakes ignore untracked files
 
-None of the above can be run on this machine yet since it's Debian, not
-NixOS, and doesn't have `nix` installed. Testing realistically means a
-NixOS VM/live-USB first.
+## Testing
+
+- Eval check: `nix flake check`
+- Build without applying: `nixos-rebuild build --flake .#<name>`
+- Disposable VM: `nixos-rebuild build-vm --flake .#<name>`
+- Apply: `sudo nixos-rebuild switch --flake .#<name>`

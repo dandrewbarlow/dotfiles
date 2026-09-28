@@ -2,33 +2,46 @@
   description = "Andrew Barlow's NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
     let
-      system = "x86_64-linux";
+      # Every host = common base + one profile + its own hosts/<hostname>/
+      # dir (hardware config, bootloader, anything machine-specific).
+      #   profile: "desktop"  - full Hyprland user environment
+      #            "headless" - SSH-only dev/hosting box
+      mkHost = { hostname, profile, system ? "x86_64-linux" }:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs; };
+          modules = [
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              networking.hostName = hostname;
+            }
+            ./modules/common.nix
+            ./modules/${profile}.nix
+            ./hosts/${hostname}
+          ];
+        };
     in
     {
-      nixosConfigurations.devarr = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/devarr/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.andrew = import ./home/andrew.nix;
-          }
-        ];
+      # Generic starting points. For a real machine, copy hosts/desktop or
+      # hosts/headless to hosts/<name>/ and add a line here, e.g.
+      #   mybox = mkHost { hostname = "mybox"; profile = "headless"; };
+      nixosConfigurations = {
+        desktop = mkHost { hostname = "desktop"; profile = "desktop"; };
+        headless = mkHost { hostname = "headless"; profile = "headless"; };
       };
     };
 }
