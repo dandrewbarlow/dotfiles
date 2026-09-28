@@ -19,6 +19,26 @@
 
   home-manager.users.andrew = import ../home/common.nix;
 
+  # Kernel console font: used for boot messages and as the fallback if
+  # kmscon fails. Bitmap-only, so no nerd font glyphs here.
+  console = {
+    earlySetup = true;
+    packages = [ pkgs.terminus_font ];
+    font = "ter-v24n";
+  };
+
+  # kmscon replaces the getty login consoles with a userspace terminal that
+  # renders real TTF fonts, so starship/yazi glyphs work outside a desktop.
+  # With a display manager enabled it leaves tty1 to the display manager.
+  services.kmscon = {
+    enable = true;
+    fonts = [{
+      name = "JetBrainsMono Nerd Font";
+      package = pkgs.nerd-fonts.jetbrains-mono;
+    }];
+    extraConfig = "font-size=14";
+  };
+
   # NixOS's built-in firewall replaces ufw from package-lists/packages.conf.
   networking.firewall.enable = true;
 
