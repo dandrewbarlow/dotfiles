@@ -46,12 +46,13 @@ in
     gcc
     gdb
     git
+    gnumake
     go
     lazygit
-    gnumake
     neovim
     nodejs
     python3
+    ripgrep
     shellcheck
 
     # FUN
