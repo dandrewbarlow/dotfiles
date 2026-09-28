@@ -23,8 +23,8 @@ Files listed in `.stow-local-ignore` are excluded: `.git`, `.gitignore`, `.gitmo
 | `dot-config/nvim/` | `~/.config/nvim/` | Neovim config — **git submodule** pointing to a separate repo |
 | `dot-oh-my-zsh/` | `~/.oh-my-zsh/` | Oh-My-Zsh customizations; zsh plugins are git submodules |
 | `dot-scripts/` | `~/.scripts/` | Personal shell scripts added to `$PATH` |
-| `dot-config/hypr/` | `~/.config/hypr/` | Hyprland compositor config |
-| `dot-config/waybar/` | `~/.config/waybar/` | Status bar (config + CSS) |
+| `dot-config/hypr/` | `~/.config/hypr/` | Hyprland config — **experimental only**, not the daily desktop (see below) |
+| `dot-config/waybar/` | `~/.config/waybar/` | Waybar status bar for the experimental Hyprland setup |
 | `dot-config/kitty/` | `~/.config/kitty/` | Kitty terminal emulator |
 | `dot-config/tmux/` | `~/.config/tmux/` | Tmux config |
 | `dot-config/yazi/` | `~/.config/yazi/` | File manager (yazi); flavors are a git submodule |
@@ -58,6 +58,7 @@ Submodules:
 
 ## Key conventions
 
+- **Desktop environment is KDE Plasma**, with no plans to change. The Hyprland/Waybar configs are kept for tinkering only. Never make Hyprland the default in any setup (NixOS profiles, package lists, install scripts).
 - Aliases are conditional on program availability via `program_is_installed` from `helper.zsh`.
 - Package manager aliases (`install`, `search`, `update`) are set dynamically based on distro detection at shell startup.
 - `podman` is aliased to `docker` when installed; `$DOCKER_HOST` is set to the podman socket.
