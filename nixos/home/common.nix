@@ -24,6 +24,8 @@ in
     ".zshrc".source = link "dot-zshrc";
     ".scripts".source = link "dot-scripts";
     ".oh-my-zsh".source = link "dot-oh-my-zsh";
+    # oh-my-zsh itself; ~/.oh-my-zsh above is only our custom plugins
+    ".local/share/oh-my-zsh".source = "${pkgs.oh-my-zsh}/share/oh-my-zsh";
   };
 
   xdg.configFile = {
@@ -72,6 +74,7 @@ in
     fzf
     htop
     fastfetch
+    starship
     p7zip
     tmux
     tree
