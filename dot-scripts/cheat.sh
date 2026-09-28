@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 # cheat.sh
 # written by Andrew Barlow
 

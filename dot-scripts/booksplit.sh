@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 # script to download audio from youtube and split audio w/ timecodes
 # https://www.youtube.com/watch?v=z_CcQhbwINU&list=PL-p5XmQHB_JREOtBfLdKSswBGYyXwXMUy&index=19&t=158s
 # https://github.com/LukeSmithxyz/voidrice/blob/master/.local/bin/booksplit

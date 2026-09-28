@@ -160,6 +160,9 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	    alias update='brew update && brew upgrade && flatpak update'
 	    alias flatinst='flatpak install'
 	    alias flatsearch='flatpak search'
+	elif [[ "$distro" == "NixOS" ]]; then
+		# TODO: NixOS shortcuts (packages live in ~/.dotfiles/nixos, not an imperative install)
+		:
 	else
 		echo "Error detecting distro in .zshrc: ZSH shortcuts may be affected"
 	fi

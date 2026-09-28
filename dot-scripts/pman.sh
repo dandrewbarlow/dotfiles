@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 # pman.sh
 # written by Andrew Barlow
 

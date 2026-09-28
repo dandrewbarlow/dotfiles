@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 # readpdf - narrate a file with native osx tts utility
 # written by Andrew Barlow

@@ -1,3 +1,3 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 pandoc $1 -t pdf | open -f -a /System/Applications/Preview.App

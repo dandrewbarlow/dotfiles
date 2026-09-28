@@ -73,8 +73,18 @@ path_add "$PATH:/opt/cuda/bin"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/cuda/lib64"
 CYCLES_CUDA_EXTRA_CFLAGS="-ccbin /usr/local/gcc-10.3.0/bin/gcc"
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# Path to your oh-my-zsh installation. On NixOS, oh-my-zsh itself comes from
+# nixpkgs (linked to ~/.local/share/oh-my-zsh by nixos/home/common.nix) and
+# ~/.oh-my-zsh only holds this repo's custom plugins.
+export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+if [ -f "$HOME/.oh-my-zsh/oh-my-zsh.sh" ]; then
+  export ZSH="$HOME/.oh-my-zsh"
+else
+  export ZSH="$HOME/.local/share/oh-my-zsh"
+  # read-only nix store copy; it's updated by nix, not by omz
+  zstyle ':omz:update' mode disabled
+  export ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/oh-my-zsh"
+fi
 
 # MISC ENV VARIABLES ==================================================
 

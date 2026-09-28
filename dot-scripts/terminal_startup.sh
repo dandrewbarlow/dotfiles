@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 # Andrew Barlow
 # A script to run every time the shell starts I know that's what the .zshrc
 # file is for, but I want to make a distinction between configuration settings
