@@ -6,9 +6,9 @@ stack_dir="$HOME/stacks"
 for stack in "$stack_dir"/*; do
   pushd "$stack" > /dev/null
   echo "Updating $stack"
-  docker compose stop
   docker compose pull
   docker compose up -d
+docker image prune -f
   popd > /dev/null
 done
 

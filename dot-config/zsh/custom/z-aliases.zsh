@@ -147,7 +147,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	 [[ "$distro" == "Pop_OS" ]]; then
 		if program_is_installed nala; then
 			alias install='sudo nala install'
-			alias update='sudo nala update'
+			alias update='sudo nala update && sudo nala upgrade'
 			alias search='nala search'
 		else
 			alias install='sudo apt-get install'
