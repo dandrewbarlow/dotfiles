@@ -48,6 +48,12 @@ path_add "$HOME/.rbenv/plugins/ruby-build/bin"
 
 # TOOL VARIABLES ==================================================
 
+# For steam deck. load homebrew if detected
+# https://old.reddit.com/r/SteamOS/comments/tptoe9/how_to_install_homebrew_package_manager_on_steam/
+if [ -e /home/linuxbrew/.linuxbrew/bin/brew ]; then
+  /home/linuxbrew/.linuxbrew/bin/brew shellenv
+fi
+
 if program_is_installed nvim; then
   export EDITOR='nvim'
 fi
