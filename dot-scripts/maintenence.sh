@@ -40,7 +40,11 @@ update_mirrors () {
 case "$action" in
 	"Clean Package Cache")
 		echo "$action"
+		# Split in two bc I had some errors using yay to clear pacman data
+		# for official repo
 		paccache -r
+		# for AUR packages
+		yay -Sc --aur
 		;;
 	"Remove Orphan Packages")
 		echo "$action"
